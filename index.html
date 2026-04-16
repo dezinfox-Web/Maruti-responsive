@@ -1,0 +1,3289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maruthi Enterprises - India's Trusted Maize Starch Supplier</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-width: 0;
+            outline: 1px solid red;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        :root {
+            --primary-green: #2E7D32;
+            --light-bg: #F9FBF9;
+            --accent-orange: #FF6F00;
+            --dark-text: #1A1A1A;
+            --secondary-text: #666666;
+            --border-color: #E0E0E0;
+            --white: #FFFFFF;
+            --green-hover: #1b5e20;
+            --orange-hover: #E55A00;
+        }
+
+        body {
+            font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 C 20 10, 25 20, 25 30 C 25 40, 20 50, 10 50 C 0 50, -5 40, -5 30 C -5 20, 0 10, 10 10' fill='%232E7D32' fill-opacity='0.02'/%3E%3C/svg%3E");
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .container,
+        section,
+        div {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== FLOATING NATURE ELEMENTS ===== */
+        .leaf-floating {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.15;
+            animation: drift 15s linear infinite;
+        }
+
+        @keyframes drift {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(100px, 100px) rotate(90deg);
+            }
+
+            50% {
+                transform: translate(0, 250px) rotate(180deg);
+            }
+
+            75% {
+                transform: translate(-100px, 100px) rotate(270deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        .leaf-1 {
+            top: 10%;
+            left: 5%;
+            width: 40px;
+            animation-duration: 20s;
+        }
+
+        .leaf-2 {
+            top: 40%;
+            right: 5%;
+            width: 60px;
+            animation-duration: 25s;
+            animation-delay: -5s;
+        }
+
+        .leaf-3 {
+            top: 70%;
+            left: 8%;
+            width: 30px;
+            animation-duration: 18s;
+            animation-delay: -2s;
+        }
+
+        .leaf-4 {
+            bottom: 10%;
+            right: 10%;
+            width: 50px;
+            animation-duration: 30s;
+            animation-delay: -10s;
+        }
+
+        /* ===== TOP BAR ===== */
+        .top-bar {
+            background: linear-gradient(135deg, #1b5e20 0%, #2E7D32 50%, #1b5e20 100%);
+            background-size: 200% 100%;
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-bar::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: skewX(-25deg);
+            animation: shimmer 6s infinite ease-in-out;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+
+            20% {
+                left: 150%;
+            }
+
+            100% {
+                left: 150%;
+            }
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .top-bar-left,
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .top-bar-item i {
+            stroke-width: 1.5px;
+            filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+            transition: all 0.3s ease;
+        }
+
+        .top-bar-item:hover i {
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6));
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .top-bar-item:hover {
+            color: var(--white);
+            transform: scale(1.02);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #4ade80;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .top-bar-center {
+            position: absolute;
+            left: 0;
+            right: 0;
+            max-width: 100%;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .top-bar-center span {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            pointer-events: auto;
+        }
+
+        /* ===== STICKY HEADER WRAPPER ===== */
+        .sticky-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        /* ===== HEADER & NAV ===== */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(46, 125, 50, 0.15));
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .brand-name {
+            font-size: 18px;
+            font-weight: 800;
+            color: #000;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .since {
+            font-size: 12px;
+            font-weight: 600;
+            color: #444;
+            margin-top: -2px;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(46, 125, 50, 0.25));
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        .cta-header {
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-header:hover {
+            background-color: var(--orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 111, 0, 0.2);
+        }
+
+        /* Hamburger button - hidden on desktop */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            color: var(--dark-text);
+            transition: background 0.3s ease;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger:hover {
+            background: rgba(46, 125, 50, 0.08);
+        }
+
+        /* Mobile drawer overlay */
+        .drawer-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .drawer-overlay.open {
+            opacity: 1;
+        }
+
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background: var(--white);
+            z-index: 2001;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: right 0.3s ease;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-drawer.open {
+            right: 0;
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .drawer-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-text);
+            border-radius: 8px;
+        }
+
+        .drawer-close:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-drawer a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-size: 16px;
+            font-weight: 500;
+            padding: 14px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: block;
+            min-height: 44px;
+        }
+
+        .mobile-drawer a:hover {
+            background: rgba(46, 125, 50, 0.08);
+            color: var(--primary-green);
+        }
+
+        .mobile-drawer .cta-drawer {
+            background-color: var(--accent-orange);
+            color: white;
+            text-align: center;
+            margin-top: 16px;
+            font-weight: 600;
+        }
+
+        .mobile-drawer .cta-drawer:hover {
+            background-color: var(--orange-hover);
+            color: white;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #FFFFFF 0%, #E8F5E9 100%);
+            min-height: calc(100vh - 80px);
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(46, 125, 50, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(46, 125, 50, 0.1);
+            color: var(--primary-green);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            color: #111;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-text .highlight {
+            color: var(--primary-green);
+        }
+
+        .hero-text .subtext {
+            font-size: 18px;
+            color: var(--secondary-text);
+            margin-bottom: 40px;
+            line-height: 1.7;
+            max-width: 540px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            margin-bottom: 48px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--orange-hover);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(255, 111, 0, 0.25);
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary-green);
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(46, 125, 50, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f7f0;
+            border-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .hero-image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            z-index: 2;
+        }
+
+        .hero-experience-tag {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 3;
+            animation: float 3s ease-in-out infinite;
+            max-width: calc(100% - 40px);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ===== HERO TRUST BAR ===== */
+        .hero-trust-bar {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            padding: 30px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+        }
+
+        .trust-stat {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0 20px;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .trust-stat:last-child {
+            border-right: none;
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(46, 125, 50, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-size: 20px;
+        }
+
+        .stat-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+
+        .stat-info p {
+            font-size: 12px;
+            color: var(--secondary-text);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== TRUST SIGNALS ===== */
+        .trust-section {
+            background-color: var(--white);
+            padding: 64px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 48px;
+            text-align: center;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .trust-icon {
+            width: 56px;
+            height: 56px;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .trust-item h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .trust-item p {
+            font-size: 14px;
+            color: var(--secondary-text);
+            font-weight: 500;
+        }
+
+        /* ===== PRODUCT PREVIEW ===== */
+        .product-preview {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--dark-text);
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: var(--secondary-text);
+        }
+
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 20px 0 40px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(46, 125, 50, 0.1);
+            border-color: var(--primary-green);
+        }
+
+        .product-image {
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.05), rgba(255, 111, 0, 0.05));
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 24px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-text);
+        }
+
+        .product-card .spec {
+            font-size: 13px;
+            color: var(--secondary-text);
+            margin-bottom: 12px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: var(--secondary-text);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .product-card .btn-primary {
+            width: 100%;
+            text-align: center;
+            padding: 12px 16px;
+            font-size: 14px;
+        }
+
+        /* ===== USP SECTION ===== */
+        .usp-section {
+            background-color: #F8FAF8;
+            padding: 100px 0;
+            border-top: 1px solid rgba(46, 125, 50, 0.05);
+            border-bottom: 1px solid rgba(46, 125, 50, 0.05);
+        }
+
+        .usp-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .usp-card {
+            background-color: var(--white);
+            padding: 40px 24px;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .usp-card:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.08);
+        }
+
+        .usp-icon-wrapper {
+            position: relative;
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .usp-icon-leaf {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(46, 125, 50, 0.08);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            transition: all 0.4s ease;
+        }
+
+        .usp-card:hover .usp-icon-leaf {
+            background-color: var(--primary-green);
+            transform: rotate(45deg);
+        }
+
+        .usp-icon {
+            position: relative;
+            font-size: 32px;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .usp-card:hover .usp-icon {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .usp-content {
+            text-align: center;
+        }
+
+        .usp-card h3 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--dark-text);
+        }
+
+        .usp-card p {
+            font-size: 14px;
+            color: var(--secondary-text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ===== DETAILED PRODUCTS ===== */
+        .detailed-products {
+            background-color: #F8FAF8;
+            padding: 100px 0;
+            border-top: 1px solid rgba(46, 125, 50, 0.05);
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .filter-btn {
+            padding: 12px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--white);
+            color: var(--dark-text);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 44px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+
+        .all-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 32px;
+        }
+
+        /* ===== TESTIMONIALS MARQUEE ===== */
+        .testimonials-section {
+            background-color: var(--white);
+            padding: 100px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-wrapper {
+            margin-top: 48px;
+            display: flex;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .marquee-container {
+            display: flex;
+            gap: 24px;
+            width: max-content;
+            animation: marquee 40s linear infinite;
+            padding: 20px 0;
+        }
+
+        .testimonials-section:hover .marquee-container {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-50% - 12px));
+            }
+        }
+
+        .testimonial-card {
+            background-color: #F8F9F8;
+            padding: 32px;
+            border-radius: 20px;
+            width: 400px;
+            max-width: 100%;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(46, 125, 50, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.08);
+            border-color: var(--primary-green);
+        }
+
+        .testimonial-card p {
+            font-size: 15px;
+            color: var(--dark-text);
+            margin-bottom: 24px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        /* ===== REVEAL ON SCROLL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card.hidden {
+            display: none;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .filter-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .filter-btn.active::after {
+            width: 60%;
+        }
+
+        .testimonial-author {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            background-color: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .testimonial-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin: 0;
+        }
+
+        .testimonial-info p {
+            font-size: 13px;
+            color: var(--secondary-text);
+            margin: 4px 0 0 0;
+            font-style: normal;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary-green) 0%, rgba(46, 125, 50, 0.8) 100%);
+            color: white;
+            padding: 64px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .final-cta p {
+            font-size: 16px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+
+        .final-cta .btn-primary {
+            background-color: var(--accent-orange);
+            padding: 18px 40px;
+            font-size: 16px;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 100px 0;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .contact-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f7f0;
+            color: #2E7D32;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+            width: fit-content;
+        }
+
+        .contact-heading {
+            font-size: 56px;
+            line-height: 1.1;
+            font-weight: 800;
+            color: #0d2a0d;
+            letter-spacing: -1px;
+        }
+
+        .contact-heading span {
+            color: #2E7D32;
+        }
+
+        .contact-description {
+            font-size: 18px;
+            color: #4a5d4a;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        .contact-usps {
+            display: flex;
+            gap: 32px;
+            margin-top: 10px;
+        }
+
+        .contact-usp-item {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .usp-icon-box {
+            width: 48px;
+            height: 48px;
+            background: #f0f7f0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2E7D32;
+        }
+
+        .usp-text h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0d2a0d;
+            margin-bottom: 4px;
+        }
+
+        .usp-text p {
+            font-size: 13px;
+            color: #6a7c6a;
+        }
+
+        .contact-visual-group {
+            position: relative;
+            margin-top: 20px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        .contact-main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-quote-card {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            background: rgba(27, 94, 32, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 16px;
+            max-width: 240px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-left: 4px solid #fff;
+        }
+
+        .quote-icon {
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 12px;
+        }
+
+        .floating-quote-card p {
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .contact-certifications {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .cert-label {
+            font-size: 12px;
+            font-weight: 800;
+            color: #2E7D32;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cert-logos {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cert-logo {
+            background: #f8faf8;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 1px solid #e8ede8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            min-width: 80px;
+        }
+
+        .cert-logo-img {
+            height: 30px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .cert-logo span {
+            font-size: 10px;
+            font-weight: 700;
+            color: #6a7c6a;
+        }
+
+        .contact-stats-bar {
+            background: #1b5e20;
+            border-radius: 16px;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stat-item i {
+            color: #ffb300;
+            background: rgba(255, 179, 0, 0.1);
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .stat-content h4 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .stat-content p {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .contact-form-card {
+            background: white;
+            border-radius: 32px;
+            padding: 48px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+        }
+
+        .form-header {
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .form-header h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #0d2a0d;
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            font-size: 15px;
+            color: #6a7c6a;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .form-group-custom {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group-custom label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0d2a0d;
+        }
+
+        .form-group-custom label span {
+            color: #ff5722;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6a7c6a;
+            pointer-events: none;
+        }
+
+        .input-wrapper input,
+        .input-wrapper select,
+        .input-wrapper textarea {
+            width: 100%;
+            padding: 14px 16px 14px 48px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .input-wrapper textarea {
+            padding-top: 16px;
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .input-wrapper input:focus,
+        .input-wrapper select:focus,
+        .input-wrapper textarea:focus {
+            outline: none;
+            border-color: #2E7D32;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+        }
+
+        .form-trust-badges {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+            margin-bottom: 32px;
+        }
+
+        .trust-badge-item {
+            background: #f8faf8;
+            padding: 12px 8px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 6px;
+        }
+
+        .trust-badge-item i {
+            color: #2E7D32;
+        }
+
+        .trust-badge-item h5 {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0d2a0d;
+        }
+
+        .trust-badge-item p {
+            font-size: 10px;
+            color: #6a7c6a;
+        }
+
+        .submit-btn-premium {
+            width: 100%;
+            background: #1b5e20;
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            min-height: 44px;
+        }
+
+        .submit-btn-premium:hover {
+            background: #2E7D32;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(46, 125, 50, 0.2);
+        }
+
+        .privacy-notice {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: #6a7c6a;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #C8E6C9;
+            color: #1b5e20;
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 16px;
+            text-align: center;
+            font-weight: 600;
+            grid-column: 1 / -1;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            padding: 120px 0;
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 100px;
+            align-items: flex-start;
+        }
+
+        .faq-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f7f0;
+            color: var(--primary-green);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .faq-content h2 {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+            letter-spacing: -2px;
+        }
+
+        .faq-content h2 span {
+            color: var(--primary-green);
+            display: block;
+        }
+
+        .faq-content p {
+            font-size: 17px;
+            color: #6a7c6a;
+            line-height: 1.6;
+            max-width: 440px;
+            margin-top: 10px;
+        }
+
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .accordion-item {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            position: relative;
+        }
+
+        .accordion-item.active {
+            border-color: #f0f0f0;
+            box-shadow: 0 20px 40px rgba(46, 125, 50, 0.05);
+        }
+
+        .accordion-header {
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            gap: 20px;
+            min-height: 44px;
+        }
+
+        .accordion-header h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        .toggle-btn {
+            width: 34px;
+            height: 34px;
+            background: #f0f7f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+        }
+
+        .accordion-item.active .toggle-btn {
+            background: var(--primary-green);
+            color: #ffffff;
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 400px;
+        }
+
+        .content-inner {
+            padding: 0 32px 32px 32px;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+            color: var(--white);
+            padding: 100px 0 40px;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1.5fr 1.2fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--primary-green);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-orange);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 111, 0, 0.2);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ==========================================================
+           RESPONSIVE BREAKPOINTS
+           ========================================================== */
+
+        /* ===== LAPTOP: 992px – 1199px ===== */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .hero-text h1 {
+                font-size: 48px;
+            }
+
+            nav {
+                gap: 20px;
+            }
+
+            .top-bar-right {
+                gap: 12px;
+            }
+
+            .contact-heading {
+                font-size: 44px;
+            }
+
+            .contact-grid {
+                gap: 48px;
+            }
+
+            .usp-grid {
+                gap: 16px;
+            }
+
+            .footer-content {
+                gap: 32px;
+            }
+
+            .faq-grid {
+                gap: 60px;
+            }
+
+            .faq-content h2 {
+                font-size: 42px;
+            }
+        }
+
+        /* ===== TABLET: 768px – 991px ===== */
+        @media (min-width: 768px) and (max-width: 991px) {
+
+            /* Top bar */
+            .top-bar-left {
+                gap: 12px;
+            }
+
+            .top-bar-right {
+                gap: 12px;
+            }
+
+            .top-bar-center {
+                display: none;
+            }
+
+            /* Header */
+            nav {
+                gap: 16px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            /* Hero */
+            .hero-content {
+                gap: 24px;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-text .subtext {
+                font-size: 16px;
+            }
+
+            /* Trust bar */
+            .hero-trust-bar {
+                padding: 20px;
+            }
+
+            .trust-stat {
+                padding: 0 12px;
+                gap: 10px;
+            }
+
+            .stat-info h4 {
+                font-size: 15px;
+            }
+
+            /* Product cards: 2 columns */
+            .product-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* USP: 2 columns */
+            .usp-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* All products */
+            .all-products {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            /* Testimonials */
+            .testimonial-card {
+                width: 320px;
+            }
+
+            /* Contact */
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-content {
+                max-width: 100%;
+            }
+
+            .contact-heading {
+                font-size: 40px;
+            }
+
+            /* Contact stats bar */
+            .contact-stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* FAQ */
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .faq-content h2 {
+                font-size: 38px;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            /* Sections padding */
+            .trust-section,
+            .product-preview,
+            .usp-section,
+            .detailed-products,
+            .testimonials-section,
+            .contact-section,
+            .faq-section {
+                padding: 64px 0;
+            }
+        }
+
+        /* ===== MOBILE: < 768px ===== */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .hero,
+            .contact-section,
+            .product-preview,
+            .faq-section {
+                overflow-x: hidden;
+            }
+
+            /* Top bar */
+            .top-bar-left {
+                display: none;
+            }
+
+            .top-bar-center {
+                display: none;
+            }
+
+            .top-bar-content {
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .top-bar-right {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .top-bar-item {
+                font-size: 10px;
+                gap: 4px;
+            }
+
+            /* Header */
+            nav {
+                display: none;
+            }
+
+            .cta-header {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .header-content {
+                padding: 0 16px;
+            }
+
+            /* Hero */
+            .hero {
+                padding: 40px 0;
+                min-height: auto;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero-text {
+                order: 1;
+            }
+
+            .hero-buttons {
+                order: 2;
+                margin-bottom: 0;
+            }
+
+            .hero-image-container {
+                order: 3;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+                letter-spacing: -1px;
+            }
+
+            .hero-text .subtext {
+                font-size: 15px;
+                margin-bottom: 24px;
+            }
+
+            .hero-badge {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+
+            .hero-experience-tag {
+                top: -10px;
+                right: 0;
+                padding: 12px;
+            }
+
+            /* Hero buttons - full width stacked */
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 16px 24px;
+            }
+
+            /* Hero trust bar: 2 columns grid */
+            .hero-trust-bar {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                padding: 20px;
+                margin-top: 32px;
+            }
+
+            .trust-stat {
+                border-right: none;
+                padding: 0;
+                gap: 10px;
+            }
+
+            .stat-info h4 {
+                font-size: 15px;
+            }
+
+            .stat-info p {
+                font-size: 10px;
+            }
+
+            /* Trust section */
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .trust-item {
+                align-items: center;
+            }
+
+            /* Product preview */
+            .product-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            /* Product trust bar inside product preview */
+            .product-preview .hero-trust-bar {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            /* USP section */
+            .usp-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .usp-card {
+                padding: 32px 20px;
+            }
+
+            .usp-section {
+                padding: 60px 0;
+            }
+
+            /* Filter bar */
+            .filter-bar {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .search-box {
+                min-width: unset;
+                width: 100%;
+                order: -1;
+            }
+
+            .filter-buttons-row {
+                display: flex;
+                gap: 8px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 8px;
+                scrollbar-width: none;
+            }
+
+            .filter-buttons-row::-webkit-scrollbar {
+                display: none;
+            }
+
+            .filter-btn {
+                white-space: nowrap;
+                flex-shrink: 0;
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            /* All products grid */
+            .all-products {
+                grid-template-columns: 1fr;
+            }
+
+            .all-products .product-card .btn-primary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Testimonials: swipe scroll */
+            .marquee-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                mask-image: none;
+                cursor: grab;
+                padding-bottom: 8px;
+            }
+
+            .marquee-container {
+                animation: none;
+                padding: 8px 0;
+            }
+
+            .testimonial-card {
+                width: 100%;
+            }
+
+            /* Contact section */
+            .contact-section {
+                padding: 60px 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .contact-content {
+                order: 1;
+            }
+
+            .contact-visual-group {
+                order: 2;
+                height: 280px;
+            }
+
+            .contact-form-card {
+                order: 3;
+            }
+
+            .contact-heading {
+                font-size: 32px;
+            }
+
+            .contact-description {
+                font-size: 15px;
+            }
+
+            .contact-usps {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-form-card {
+                padding: 28px 20px;
+                border-radius: 20px;
+            }
+
+            .form-header h2 {
+                font-size: 24px;
+            }
+
+            .input-wrapper input,
+            .input-wrapper select,
+            .input-wrapper textarea {
+                padding: 16px 16px 16px 48px;
+                font-size: 16px;
+                /* prevent iOS zoom */
+            }
+
+            .form-trust-badges {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-quote-card {
+                right: 16px;
+                bottom: 16px;
+                max-width: 180px;
+                padding: 16px;
+            }
+
+            .floating-quote-card p {
+                font-size: 12px;
+            }
+
+            /* Contact stats bar */
+            .contact-stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                padding: 20px 16px;
+            }
+
+            .stat-content h4 {
+                font-size: 16px;
+            }
+
+            /* FAQ */
+            .faq-section {
+                padding: 60px 0;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .faq-content h2 {
+                font-size: 32px;
+                letter-spacing: -1px;
+            }
+
+            .faq-content p {
+                font-size: 15px;
+            }
+
+            .accordion-header {
+                padding: 18px 20px;
+                min-height: 60px;
+            }
+
+            .accordion-header h4 {
+                font-size: 15px;
+            }
+
+            .content-inner {
+                padding: 0 20px 20px 20px;
+            }
+
+            /* Final CTA */
+            .final-cta {
+                padding: 60px 0;
+            }
+
+            .final-cta h2 {
+                font-size: 24px;
+            }
+
+            .final-cta .btn-primary {
+                width: 100%;
+                justify-content: center;
+                max-width: 360px;
+                margin: 0 auto;
+            }
+
+            .final-cta .container {
+                padding: 0 20px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 60px 0 32px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+                text-align: left;
+            }
+
+            .footer-section h4 {
+                margin-bottom: 16px;
+            }
+
+            .social-icons {
+                justify-content: flex-start;
+            }
+
+            .footer-bottom {
+                font-size: 12px;
+            }
+
+            /* Sections padding */
+            .trust-section,
+            .product-preview,
+            .detailed-products,
+            .testimonials-section {
+                padding: 48px 0;
+            }
+
+            /* Container padding on mobile */
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        /* Extra small: < 400px */
+        @media (max-width: 399px) {
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .top-bar-right {
+                gap: 8px;
+            }
+
+            .top-bar-item {
+                font-size: 9px;
+            }
+
+            .hero-trust-bar {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-stat {
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 12px;
+            }
+
+            .trust-stat:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nature Floating Elements -->
+    <svg class="leaf-floating leaf-1" viewBox="0 0 24 24" fill="#2E7D32">
+        <path
+            d="M21,7c-4.4,0-8,3.6-8,8c0,4.4,3.6,8,8,8s8-3.6,8-8S25.4,7,21,7z M21,21c-3.3,0-6-2.7-6-6c0-3.3,2.7-6,6-6s6,2.7,6,6C27,18.3,24.3,21,21,21z" />
+    </svg>
+    <svg class="leaf-floating leaf-2" viewBox="0 0 24 24" fill="#2E7D32">
+        <path d="M12,2C7,2,2,7,2,12c0,5,10,10,10,10s10-5,10-10C22,7,17,2,12,2z" />
+    </svg>
+    <svg class="leaf-floating leaf-3" viewBox="0 0 24 24" fill="#2E7D32">
+        <path d="M12,3c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S17,3,12,3z" />
+    </svg>
+    <svg class="leaf-floating leaf-4" viewBox="0 0 24 24" fill="#2E7D32">
+        <path d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z" />
+    </svg>
+
+    <!-- STICKY HEADER WRAPPER -->
+    <div class="sticky-wrapper">
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="top-bar-left">
+                    <a href="#" class="top-bar-item">
+                        <i data-lucide="instagram" size="10" stroke-width="1.5"></i>
+                    </a>
+                </div>
+                <div class="top-bar-center">
+                    <span class="top-bar-item" style="cursor: default; color: white;">
+                        <i data-lucide="shield-check" size="10" stroke-width="1.5"></i>
+                        ISO 9001:2015 & FSSAI Certified Starch Supplier
+                    </span>
+                </div>
+                <div class="top-bar-right">
+                    <div class="top-bar-item">
+                        <div class="status-dot"></div>
+                        <i data-lucide="phone" size="10" stroke-width="1.5"></i>
+                        +91 99443 65636
+                    </div>
+                    <div class="top-bar-item">
+                        <i data-lucide="globe" size="10" stroke-width="1.5"></i>
+                        PAN India Logistics
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HEADER & NAV -->
+        <header>
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <img src="image copy.png" alt="Maruthi Enterprises Logo">
+                    <div class="logo-text">
+                        <span class="brand-name">Maruthi's Enterprises</span>
+                        <span class="since">Since 2000</span>
+                    </div>
+                </a>
+                <nav>
+                    <a href="#products">Products</a>
+                    <a href="#why-us">Why Us</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <button class="cta-header"
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Quote</button>
+                <!-- Hamburger for mobile -->
+                <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+                    <i data-lucide="menu" size="24"></i>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <!-- MOBILE DRAWER -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <span style="font-weight: 800; font-size: 16px; color: var(--dark-text);">Menu</span>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+                <i data-lucide="x" size="20"></i>
+            </button>
+        </div>
+        <a href="#products" class="drawer-link">Products</a>
+        <a href="#why-us" class="drawer-link">Why Us</a>
+        <a href="#testimonials" class="drawer-link">Testimonials</a>
+        <a href="#contact" class="drawer-link">Contact</a>
+        <a href="#contact" class="cta-drawer">Get Quote</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span>🍃</span> 23+ Years of Trust & Quality
+                    </div>
+                    <h1>India's Trusted <br><span class="highlight">Maize Starch</span> Supplier</h1>
+                    <p class="subtext">Delivering premium-quality starch products with consistency, purity, and
+                        reliability to power industries across India and beyond.</p>
+
+                    <div class="hero-buttons">
+                        <button class="btn-primary"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                            Get a Quote
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                        <button class="btn-secondary"
+                            onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+                            View Products
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7" />
+                                <rect x="14" y="3" width="7" height="7" />
+                                <rect x="14" y="14" width="7" height="7" />
+                                <rect x="3" y="14" width="7" height="7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-image-container">
+                    <img src="standard.png" alt="Maruthi Maize Starch" class="hero-image-main">
+                    <div class="hero-experience-tag">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-info">
+                            <h4>Agricultural</h4>
+                            <p>Excellence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-trust-bar">
+                <div class="trust-stat">
+                    <div class="stat-icon">🛡️</div>
+                    <div class="stat-info">
+                        <h4>FSSAI</h4>
+                        <p>Certified Mfg.</p>
+                    </div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-icon">🏢</div>
+                    <div class="stat-info">
+                        <h4>MSME</h4>
+                        <p>Registered</p>
+                    </div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-icon">☪️</div>
+                    <div class="stat-info">
+                        <h4>HALAL</h4>
+                        <p>Certified</p>
+                    </div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <h4>500+</h4>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-icon">⏳</div>
+                    <div class="stat-info">
+                        <h4>23+</h4>
+                        <p>Years Exp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT PREVIEW -->
+    <section class="product-preview" id="products">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="hero-badge" style="margin: 0 auto 16px; display: table;">
+                    <span>★</span> OUR PRODUCTS
+                </div>
+                <h2 style="font-size: 48px; font-weight: 800; letter-spacing: -1.5px;">Premium <span
+                        class="highlight">Maize Starch Solutions</span></h2>
+                <p style="font-size: 18px; margin-top: 10px;">High-quality, versatile starch products crafted to meet
+                    diverse industrial needs</p>
+            </div>
+
+            <div class="hero-trust-bar"
+                style="max-width: 900px; margin: 0 auto 48px; background: rgba(255, 255, 255, 0.5);">
+                <div class="trust-stat">
+                    <div class="stat-icon" style="background: rgba(46, 125, 50, 0.1);">🌿</div>
+                    <div class="stat-info">
+                        <h4>Premium Quality</h4>
+                        <p>Consistent purity & performance</p>
+                    </div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-icon" style="background: rgba(46, 125, 50, 0.1);">🛡️</div>
+                    <div class="stat-info">
+                        <h4>Trusted Partner</h4>
+                        <p>23+ years of industry expertise</p>
+                    </div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-icon" style="background: rgba(46, 125, 50, 0.1);">🚛</div>
+                    <div class="stat-info">
+                        <h4>Reliable Delivery</h4>
+                        <p>On-time, every time</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-cards">
+                <div class="product-card" style="position: relative; max-width: 100%;">
+                    <div
+                        style="position: absolute; top: 10px; left: 10px; z-index: 10; background: rgba(255,255,255,0.95); padding: 2px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; color: #1b5e20; display: flex; align-items: center; gap: 4px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        🛡️ Food Grade</div>
+                    <div class="product-image" style="height: 200px;"><img src="food-grade.png"
+                            alt="Food Grade Maize Starch"></div>
+                    <div class="product-info" style="padding: 20px;">
+                        <h3 style="margin-bottom: 4px; font-size: 17px;">Food Grade Maize Starch</h3>
+                        <p class="spec" style="color: #2E7D32; font-weight: 600; font-size: 12px; margin-bottom: 8px;">
+                            50 kg & 25 kg Bags</p>
+                        <p
+                            style="font-size: 13px; line-height: 1.5; margin-bottom: 12px; height: 3.2em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                            Premium quality starch for food manufacturing, with superior whiteness and consistency</p>
+                        <div style="display: flex; gap: 6px; margin-bottom: 15px; flex-wrap: wrap;">
+                            <span
+                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">⛰️
+                                High Purity</span>
+                            <span
+                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">✅
+                                Food Safe</span>
+                        </div>
+                        <button class="btn-primary"
+                            style="width: 100%; border-radius: 6px; background: linear-gradient(to right, #FF6F00, #FF8F00); padding: 10px 16px; font-size: 13px; justify-content: center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                            Get a Quote
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-left: 4px;">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" style="position: relative; max-width: 100%;">
+                    <div
+                        style="position: absolute; top: 10px; left: 10px; z-index: 10; background: rgba(255,255,255,0.95); padding: 2px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; color: #1b5e20; display: flex; align-items: center; gap: 4px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        ⚙️ Industrial Grade</div>
+                    <div class="product-image" style="height: 200px; position: relative;">
+                        <img src="industrial.png" alt="Industrial Maize Starch">
+                        <div
+                            style="position: absolute; bottom: 10px; right: 10px; width: 50px; height: 50px; background: #1b5e20; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-align: center; font-size: 8px; font-weight: 800; line-height: 1; border: 2px solid rgba(255,255,255,0.2); box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                            BULK<br>SUPPLY</div>
+                    </div>
+                    <div class="product-info" style="padding: 20px;">
+                        <h3 style="margin-bottom: 4px; font-size: 17px;">Industrial Maize Starch</h3>
+                        <p class="spec" style="color: #2E7D32; font-weight: 600; font-size: 12px; margin-bottom: 8px;">
+                            1000 kg Bulk Orders</p>
+                        <p
+                            style="font-size: 13px; line-height: 1.5; margin-bottom: 12px; height: 3.2em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                            High-performance starch for textile, paper, and industrial applications</p>
+                        <div style="display: flex; gap: 6px; margin-bottom: 15px; flex-wrap: wrap;">
+                            <span
+                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">💧
+                                High Viscosity</span>
+                            <span
+                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">💰
+                                Cost Eff.</span>
+                        </div>
+                        <button class="btn-primary"
+                            style="width: 100%; border-radius: 6px; background: linear-gradient(to right, #FF6F00, #FF8F00); padding: 10px 16px; font-size: 13px; justify-content: center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                            Get a Quote
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-left: 4px;">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" style="position: relative; max-width: 100%;">
+                    <div
+                        style="position: absolute; top: 10px; left: 10px; z-index: 10; background: rgba(255,255,255,0.95); padding: 2px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; color: #1b5e20; display: flex; align-items: center; gap: 4px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        🔬 Custom Solutions</div>
+                    <div class="product-image" style="height: 200px; position: relative;">
+                        <img src="modified.png" alt="Modified Maize Starch">
+                        <div
+                            style="position: absolute; bottom: 10px; right: 10px; width: 50px; height: 50px; background: #1b5e20; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-align: center; font-size: 8px; font-weight: 800; line-height: 1; border: 2px solid rgba(255,255,255,0.2); box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                            TAILORED<br>TO YOU</div>
+                    </div>
+                    <div class="product-info" style="padding: 20px;">
+                        <h3 style="margin-bottom: 4px; font-size: 17px;">Modified Maize Starch</h3>
+                        <p class="spec" style="color: #2E7D32; font-weight: 600; font-size: 12px; margin-bottom: 8px;">
+                            Custom Specifications</p>
+                        <p
+                            style="font-size: 13px; line-height: 1.5; margin-bottom: 12px; height: 3.2em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                            Customized starch solutions tailored to your specific manufacturing needs</p>
+                        <div style="display: flex; gap: 6px; margin-bottom: 15px; flex-wrap: wrap;">
+                            <span
+                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">⚙️
+                                Customizable</span>
+                            <span
+                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">🛡️
+                                High Stability</span>
+                        </div>
+                        <button class="btn-primary"
+                            style="width: 100%; border-radius: 6px; background: linear-gradient(to right, #FF6F00, #FF8F00); padding: 10px 16px; font-size: 13px; justify-content: center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                            Get a Quote
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-left: 4px;">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP SECTION -->
+    <section class="usp-section" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us?</h2>
+                <p>Quality and reliability you can trust</p>
+            </div>
+            <div class="usp-grid">
+                <div class="usp-card">
+                    <div class="usp-icon-wrapper">
+                        <div class="usp-icon-leaf"></div>
+                        <div class="usp-icon">💎</div>
+                    </div>
+                    <div class="usp-content">
+                        <h3>High Quality</h3>
+                        <p>Stringent quality control at every stage ensures our starch meets international standards.
+                        </p>
+                    </div>
+                </div>
+                <div class="usp-card">
+                    <div class="usp-icon-wrapper">
+                        <div class="usp-icon-leaf"></div>
+                        <div class="usp-icon">⏱️</div>
+                    </div>
+                    <div class="usp-content">
+                        <h3>On-Time Delivery</h3>
+                        <p>Reliable logistics network ensures your orders arrive on schedule, every time.</p>
+                    </div>
+                </div>
+                <div class="usp-card">
+                    <div class="usp-icon-wrapper">
+                        <div class="usp-icon-leaf"></div>
+                        <div class="usp-icon">🏢</div>
+                    </div>
+                    <div class="usp-content">
+                        <h3>Industry Expertise</h3>
+                        <p>23+ years of experience in providing specialized starch solutions to various industries.</p>
+                    </div>
+                </div>
+                <div class="usp-card">
+                    <div class="usp-icon-wrapper">
+                        <div class="usp-icon-leaf"></div>
+                        <div class="usp-icon">💰</div>
+                    </div>
+                    <div class="usp-content">
+                        <h3>Competitive Pricing</h3>
+                        <p>Best value for money with flexible payment options for bulk orders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED PRODUCTS SECTION -->
+    <section class="detailed-products reveal" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Complete Product Range</h2>
+                <p>Comprehensive solutions for every requirement</p>
+            </div>
+
+            <div class="filter-bar">
+                <input type="text" class="search-box" id="productSearch" placeholder="Search products...">
+                <div class="filter-buttons-row">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="food">Food Grade</button>
+                    <button class="filter-btn" data-category="industrial">Industrial</button>
+                    <button class="filter-btn" data-category="specialized">Specialized</button>
+                </div>
+            </div>
+
+            <div class="all-products" id="productGrid">
+                <div class="product-card" data-category="food" data-name="standard maize starch">
+                    <div class="product-image"><img src="standard.png" alt="Standard Maize Starch"></div>
+                    <div class="product-info">
+                        <h3>Standard Maize Starch</h3>
+                        <p class="spec">50 kg | 25 kg | 1000 kg</p>
+                        <p>Our flagship product, trusted by manufacturers nationwide</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="food" data-name="premium bleached starch">
+                    <div class="product-image"><img src="premium-bleached.png" alt="Premium Bleached Starch"></div>
+                    <div class="product-info">
+                        <h3>Premium Bleached Starch</h3>
+                        <p class="spec">50 kg | 25 kg</p>
+                        <p>Enhanced whiteness for premium food applications</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="industrial" data-name="cross-linked starch">
+                    <div class="product-image"><img src="cross-linked.png" alt="Cross-Linked Starch"></div>
+                    <div class="product-info">
+                        <h3>Cross-Linked Starch</h3>
+                        <p class="spec">Custom Orders</p>
+                        <p>Enhanced stability for demanding applications</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="food" data-name="pre-gelatinized starch">
+                    <div class="product-image"><img src="industrial.png" alt="Pre-Gelatinized Starch"></div>
+                    <div class="product-info">
+                        <h3>Pre-Gelatinized Starch</h3>
+                        <p class="spec">Bulk Available</p>
+                        <p>Ready-to-use starch for instant formulations</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="industrial" data-name="paper grade starch">
+                    <div class="product-image"><img src="modified.png" alt="Paper Grade Starch"></div>
+                    <div class="product-info">
+                        <h3>Paper Grade Starch</h3>
+                        <p class="spec">1000 kg | Bulk</p>
+                        <p>Optimized for paper and textile industries</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="specialized" data-name="custom formulations">
+                    <div class="product-image"><img src="standard.png" alt="Custom Formulations"></div>
+                    <div class="product-info">
+                        <h3>Custom Formulations</h3>
+                        <p class="spec">Made to Order</p>
+                        <p>Specialized starch solutions for unique needs</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section reveal" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>What our satisfied clients say about us</p>
+            </div>
+        </div>
+
+        <div class="marquee-wrapper" id="marqueeWrapper">
+            <div class="marquee-container" id="marqueeContainer">
+                <div class="testimonial-card">
+                    <p>"Maruthi Enterprises provides consistent quality and excellent service. They've been our trusted
+                        partner for 8+ years."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AK</div>
+                        <div class="testimonial-info">
+                            <h4>Arjun Kumar</h4>
+                            <p>Nutrition Foods Pvt. Ltd</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Outstanding delivery reliability and product quality. We've never had to look elsewhere for our
+                        starch requirements."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RN</div>
+                        <div class="testimonial-info">
+                            <h4>Rajesh Nair</h4>
+                            <p>Textile Innovation Corp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Best supplier in the industry. Their competitive pricing and technical support make them
+                        invaluable to our operations."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SG</div>
+                        <div class="testimonial-info">
+                            <h4>Sneha Gupta</h4>
+                            <p>Premium Food Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Highly professional team with deep industry knowledge. Their food-grade starch is consistently
+                        top-tier."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MP</div>
+                        <div class="testimonial-info">
+                            <h4>Manoj Pandey</h4>
+                            <p>Quality Bakers India</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="testimonial-card">
+                    <p>"Maruthi Enterprises provides consistent quality and excellent service. They've been our trusted
+                        partner for 8+ years."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AK</div>
+                        <div class="testimonial-info">
+                            <h4>Arjun Kumar</h4>
+                            <p>Nutrition Foods Pvt. Ltd</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Outstanding delivery reliability and product quality. We've never had to look elsewhere for our
+                        starch requirements."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RN</div>
+                        <div class="testimonial-info">
+                            <h4>Rajesh Nair</h4>
+                            <p>Textile Innovation Corp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Best supplier in the industry. Their competitive pricing and technical support make them
+                        invaluable to our operations."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SG</div>
+                        <div class="testimonial-info">
+                            <h4>Sneha Gupta</h4>
+                            <p>Premium Food Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Highly professional team with deep industry knowledge. Their food-grade starch is consistently
+                        top-tier."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MP</div>
+                        <div class="testimonial-info">
+                            <h4>Manoj Pandey</h4>
+                            <p>Quality Bakers India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section reveal" id="faq">
+        <div class="container">
+            <div class="faq-grid">
+                <div class="faq-content">
+                    <div class="faq-badge">
+                        <i data-lucide="help-circle" size="14"></i>
+                        Frequently asked questions
+                    </div>
+                    <h2>Frequently asked <br><span>questions</span></h2>
+                    <p>High-quality, reliable solutions tailored to your industrial needs. Find answers to our most
+                        common queries below.</p>
+                </div>
+
+                <div class="faq-accordion">
+                    <div class="accordion-item active">
+                        <div class="accordion-header">
+                            <h4>What is maize starch?</h4>
+                            <div class="toggle-btn"><i data-lucide="chevron-down" size="20"></i></div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">Maize starch is a fine, white powder derived from corn, widely
+                                used in food processing, textiles, paper, and industrial applications due to its binding
+                                and thickening properties.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>What industries use your products?</h4>
+                            <div class="toggle-btn"><i data-lucide="chevron-down" size="20"></i></div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">Our products serve food and beverage, textiles, paper, and
+                                pharmaceuticals industries with specialized starch solutions for each.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>What is your minimum order quantity?</h4>
+                            <div class="toggle-btn"><i data-lucide="chevron-down" size="20"></i></div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">Our standard minimum order quantity is 1 ton (1000 kg). For trial
+                                or specialized orders, we can discuss tailored quantities.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Do you provide bulk supply?</h4>
+                            <div class="toggle-btn"><i data-lucide="chevron-down" size="20"></i></div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">Yes, we specialize in high-volume bulk supply with capacity to
+                                deliver 100+ metric tons per month with consistent quality and reliable logistics.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Are your products certified?</h4>
+                            <div class="toggle-btn"><i data-lucide="chevron-down" size="20"></i></div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">Yes, we are FSSAI certified, MSME registered, HALAL certified,
+                                and adhere to strict ISO 9001:2015 quality standards.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Experience Premium Quality?</h2>
+            <p>Get the best quality maize starch delivered right to your doorstep</p>
+            <button class="btn-primary" style="margin: 0 auto; display: inline-flex;"
+                onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote
+                Now</button>
+        </div>
+    </section>
+
+    <!-- PREMIUM CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-content">
+                    <div class="contact-badge">
+                        <i data-lucide="leaf" size="16"></i>
+                        LET'S CONNECT
+                    </div>
+                    <h2 class="contact-heading">Let's Build Something <span>Great Together</span></h2>
+                    <p class="contact-description">Have questions about our maize starch products? Our team is here to
+                        help you find the perfect solution.</p>
+
+                    <div class="contact-usps">
+                        <div class="contact-usp-item">
+                            <div class="usp-icon-box"><i data-lucide="shield-check" size="24"></i></div>
+                            <div class="usp-text">
+                                <h4>Trusted Quality</h4>
+                                <p>23+ Years of Excellence</p>
+                            </div>
+                        </div>
+                        <div class="contact-usp-item">
+                            <div class="usp-icon-box"><i data-lucide="users" size="24"></i></div>
+                            <div class="usp-text">
+                                <h4>Quick Response</h4>
+                                <p>Within 24 Hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-usp-item">
+                            <div class="usp-icon-box"><i data-lucide="handshake" size="24"></i></div>
+                            <div class="usp-text">
+                                <h4>Customer First</h4>
+                                <p>Your Success, Our Priority</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-visual-group">
+                        <img src="image.png" alt="Maruthi Factory" class="contact-main-image">
+                        <div class="floating-quote-card">
+                            <i data-lucide="quote" class="quote-icon" size="32"></i>
+                            <p>We don't just supply starch, we build lasting partnerships.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-certifications">
+                        <span class="cert-label">CERTIFIED & COMPLIANT</span>
+                        <div class="cert-logos">
+                            <div class="cert-logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/FSSAI_logo.svg/300px-FSSAI_logo.svg.png"
+                                    alt="FSSAI" class="cert-logo-img">
+                                <span>Certified</span>
+                            </div>
+                            <div class="cert-logo">
+                                <span style="font-size: 18px; font-weight: 900; color: #1565c0;">MSME</span>
+                                <span style="margin-top: -5px;">Registered</span>
+                            </div>
+                            <div class="cert-logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Halal_logo.svg/300px-Halal_logo.svg.png"
+                                    alt="HALAL" class="cert-logo-img">
+                                <span>Certified</span>
+                            </div>
+                            <div class="cert-logo">
+                                <span style="font-size: 18px; font-weight: 900; color: #333;">ISO</span>
+                                <span style="margin-top: -5px;">9001:2015</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-stats-bar">
+                        <div class="stat-item">
+                            <i data-lucide="award" size="20"></i>
+                            <div class="stat-content">
+                                <h4>23+</h4>
+                                <p>Years Exp.</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i data-lucide="users-round" size="20"></i>
+                            <div class="stat-content">
+                                <h4>500+</h4>
+                                <p>Happy Clients</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i data-lucide="package-check" size="20"></i>
+                            <div class="stat-content">
+                                <h4>1000+</h4>
+                                <p>Orders Delivered</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i data-lucide="map-pin" size="20"></i>
+                            <div class="stat-content">
+                                <h4>PAN India</h4>
+                                <p>Delivery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="contact-form-card">
+                    <div class="form-header">
+                        <h2>Get in Touch</h2>
+                        <p>Fill the form below and our team will contact you shortly.</p>
+                    </div>
+
+                    <form id="contactForm" onsubmit="handleSubmit(event)" class="form-grid">
+                        <div class="form-group-custom">
+                            <label for="name">Full Name <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i data-lucide="user" size="18"></i>
+                                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            </div>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="phone">Phone Number <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i data-lucide="phone" size="18"></i>
+                                <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+                            </div>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="email">Email Address</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="mail" size="18"></i>
+                                <input type="email" id="email" name="email" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="product">Product Interested In</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="package" size="18"></i>
+                                <select id="product" name="product">
+                                    <option value="">Select a product...</option>
+                                    <option>Food Grade Maize Starch</option>
+                                    <option>Industrial Maize Starch</option>
+                                    <option>Modified Maize Starch</option>
+                                    <option>Premium Bleached Starch</option>
+                                    <option>Cross-Linked Starch</option>
+                                    <option>Custom Formulations</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="message">Message</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="message-square" size="18" style="top: 20px; transform: none;"></i>
+                                <textarea id="message" name="message"
+                                    placeholder="Tell us about your requirements..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-trust-badges">
+                            <div class="trust-badge-item">
+                                <i data-lucide="clock" size="18"></i>
+                                <h5>Fast Response</h5>
+                                <p>Within 24 Hours</p>
+                            </div>
+                            <div class="trust-badge-item">
+                                <i data-lucide="heart-handshake" size="18"></i>
+                                <h5>Expert Support</h5>
+                                <p>Our Product Specialists</p>
+                            </div>
+                            <div class="trust-badge-item">
+                                <i data-lucide="shield-check" size="18"></i>
+                                <h5>No Spam</h5>
+                                <p>We Respect Privacy</p>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn-premium">
+                            <i data-lucide="send" size="18"></i>
+                            Submit Request
+                        </button>
+
+                        <div class="success-message" id="successMsg">✓ Thank you! We'll be in touch within 24 hours.
+                        </div>
+
+                        <p class="privacy-notice">By submitting this form, you agree to our <a href="#">Privacy
+                                Policy</a>.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>lucide.createIcons();</script>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Maruthi Enterprises is India's leading maize starch manufacturer, serving industries for over 23
+                        years with consistent quality and reliability.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#products">Products</a>
+                    <a href="#why-us">Why Us</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 Industrial Area, Telangana 500001</p>
+                    <p>📞 +91 9876543210</p>
+                    <p>📧 info@maruthi-enterprises.com</p>
+                    <div class="social-icons">
+                        <div class="social-icon">f</div>
+                        <div class="social-icon">in</div>
+                        <div class="social-icon">tw</div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Certifications</h4>
+                    <p>✓ FSSAI Certified</p>
+                    <p>✓ MSME Registered</p>
+                    <p>✓ HALAL Certified</p>
+                    <p>✓ ISO Standards</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Maruthi Enterprises. All rights reserved. | Privacy Policy | Terms & Conditions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== HAMBURGER MENU =====
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+        const drawerClose = document.getElementById('drawerClose');
+
+        function openDrawer() {
+            drawerOverlay.style.display = 'block';
+            setTimeout(() => {
+                drawerOverlay.classList.add('open');
+                mobileDrawer.classList.add('open');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            drawerOverlay.classList.remove('open');
+            mobileDrawer.classList.remove('open');
+            setTimeout(() => { drawerOverlay.style.display = 'none'; }, 300);
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', openDrawer);
+        drawerClose.addEventListener('click', closeDrawer);
+        drawerOverlay.addEventListener('click', closeDrawer);
+
+        // Close drawer on link click
+        document.querySelectorAll('.drawer-link, .cta-drawer').forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+
+        // ===== SCROLL REVEALS =====
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ===== PRODUCT FILTERING =====
+        const productGrid = document.getElementById('productGrid');
+        const productSearch = document.getElementById('productSearch');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('#productGrid .product-card');
+
+        function filterProducts() {
+            const searchTerm = productSearch.value.toLowerCase();
+            const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
+            productCards.forEach(card => {
+                const name = card.dataset.name.toLowerCase();
+                const category = card.dataset.category;
+                const matchesSearch = name.includes(searchTerm);
+                const matchesCategory = activeCategory === 'all' || category === activeCategory;
+                card.classList.toggle('hidden', !(matchesSearch && matchesCategory));
+            });
+        }
+
+        productSearch.addEventListener('input', filterProducts);
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                filterProducts();
+            });
+        });
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            item.querySelector('.accordion-header').addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // ===== CONTACT FORM =====
+        function handleSubmit(event) {
+            event.preventDefault();
+            const successMsg = document.getElementById('successMsg');
+            successMsg.style.display = 'block';
+            document.getElementById('contactForm').reset();
+            setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
+        }
+
+        // ===== TESTIMONIALS: DISABLE MARQUEE ON MOBILE + TOUCH SWIPE =====
+        function handleTestimonialsResponsive() {
+            const wrapper = document.getElementById('marqueeWrapper');
+            const container = document.getElementById('marqueeContainer');
+            if (window.innerWidth < 768) {
+                container.style.animation = 'none';
+                wrapper.style.overflowX = 'auto';
+                wrapper.style.webkitOverflowScrolling = 'touch';
+            } else {
+                container.style.animation = '';
+                wrapper.style.overflowX = 'hidden';
+            }
+        }
+
+        handleTestimonialsResponsive();
+        window.addEventListener('resize', handleTestimonialsResponsive);
+
+        // ===== INITIAL REVEAL =====
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight) {
+                    el.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
