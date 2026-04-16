@@ -343,6 +343,10 @@
             box-shadow: 0 4px 12px rgba(255, 111, 0, 0.2);
         }
 
+        .mobile-right-action {
+            display: none;
+        }
+
         /* Hamburger button - hidden on desktop */
         .hamburger {
             display: none;
@@ -384,17 +388,16 @@
         .mobile-drawer {
             position: fixed;
             top: 0;
-            right: -280px;
-            width: 280px;
+            right: -100%;
+            width: 320px;
+            max-width: 85%;
             height: 100%;
             background: var(--white);
             z-index: 2001;
-            padding: 24px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            transition: right 0.3s ease;
-            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
         }
 
         .mobile-drawer.open {
@@ -402,60 +405,79 @@
         }
 
         .drawer-header {
+            background: #1b5e20;
+            padding: 24px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border-color);
+            color: white;
         }
 
         .drawer-close {
-            background: none;
+            background: rgba(255, 255, 255, 0.1);
             border: none;
-            cursor: pointer;
-            padding: 8px;
-            min-width: 44px;
-            min-height: 44px;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--dark-text);
-            border-radius: 8px;
+            cursor: pointer;
         }
 
-        .drawer-close:hover {
-            background: rgba(0, 0, 0, 0.05);
+        .drawer-nav {
+            padding: 20px 0;
+            flex-grow: 1;
+            overflow-y: auto;
         }
 
-        .mobile-drawer a {
+        .drawer-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 24px;
+            color: #444;
             text-decoration: none;
-            color: var(--dark-text);
-            font-size: 16px;
             font-weight: 500;
-            padding: 14px 12px;
-            border-radius: 8px;
+            font-size: 15px;
             transition: all 0.3s ease;
-            display: block;
-            min-height: 44px;
+            border-left: 4px solid transparent;
         }
 
-        .mobile-drawer a:hover {
-            background: rgba(46, 125, 50, 0.08);
+        .drawer-item i {
+            color: #666;
+            transition: all 0.3s ease;
+        }
+
+        .drawer-item:hover, .drawer-item.active {
+            background: rgba(46, 125, 50, 0.05);
+            color: var(--primary-green);
+            border-left-color: var(--primary-green);
+        }
+
+        .drawer-item:hover i {
             color: var(--primary-green);
         }
 
-        .mobile-drawer .cta-drawer {
-            background-color: var(--accent-orange);
-            color: white;
-            text-align: center;
-            margin-top: 16px;
-            font-weight: 600;
+        .drawer-footer {
+            padding: 24px;
+            background: #f9fbf9;
+            border-top: 1px solid #eee;
         }
 
-        .mobile-drawer .cta-drawer:hover {
-            background-color: var(--orange-hover);
+        .drawer-btn {
+            background: #1b5e20;
             color: white;
+            padding: 14px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(27, 94, 32, 0.2);
         }
 
         /* ===== HERO SECTION ===== */
@@ -510,16 +532,17 @@
         }
 
         .hero-text h1 {
-            font-size: 56px;
+            font-size: 64px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             line-height: 1.1;
-            color: #111;
-            letter-spacing: -1.5px;
+            color: #1a1a1a;
+            letter-spacing: -2.5px;
         }
 
         .hero-text .highlight {
             color: var(--primary-green);
+            display: block;
         }
 
         .hero-text .subtext {
@@ -628,12 +651,18 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 24px;
-            padding: 30px;
+            padding: 32px;
             margin-top: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+
+        .trust-bar-track {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 20px;
         }
 
         .trust-stat {
@@ -646,6 +675,10 @@
 
         .trust-stat:last-child {
             border-right: none;
+        }
+
+        .marquee-only {
+            display: none !important;
         }
 
         .stat-icon {
@@ -731,10 +764,17 @@
         }
 
         .section-header h2 {
-            font-size: 32px;
-            font-weight: 600;
+            font-size: 48px;
+            font-weight: 800;
             margin-bottom: 16px;
-            color: var(--dark-text);
+            color: #1a1a1a;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .section-header h2 .highlight {
+            color: var(--primary-green);
+            display: block;
         }
 
         .section-header p {
@@ -822,6 +862,10 @@
             padding: 100px 0;
             border-top: 1px solid rgba(46, 125, 50, 0.05);
             border-bottom: 1px solid rgba(46, 125, 50, 0.05);
+        }
+
+        .usp-grid-container {
+            overflow: visible;
         }
 
         .usp-grid {
@@ -1624,8 +1668,8 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1.5fr 1.2fr;
-            gap: 60px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px 80px;
             margin-bottom: 60px;
         }
 
@@ -1887,12 +1931,41 @@
                 display: none;
             }
 
-            .hamburger {
-                display: flex;
-            }
-
             .header-content {
                 padding: 0 16px;
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                align-items: center;
+                gap: 0;
+            }
+
+            .hamburger {
+                display: flex;
+                grid-column: 1;
+                justify-self: start;
+                padding-left: 0;
+            }
+
+            .logo {
+                grid-column: 2;
+                justify-self: center;
+                gap: 8px;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .logo-text {
+                display: none;
+            }
+
+            /* Add phone icon placeholder for right side if needed, or justify CTA */
+            .mobile-right-action {
+                display: flex;
+                grid-column: 3;
+                justify-self: end;
+                color: var(--dark-text);
             }
 
             /* Hero */
@@ -1920,60 +1993,77 @@
             }
 
             .hero-text h1 {
-                font-size: 32px;
-                letter-spacing: -1px;
+                font-size: 34px;
+                letter-spacing: -1.2px;
+                margin-bottom: 24px;
             }
 
             .hero-text .subtext {
                 font-size: 15px;
-                margin-bottom: 24px;
+                margin-bottom: 32px;
+                color: #555;
             }
 
             .hero-badge {
-                font-size: 11px;
-                padding: 6px 12px;
+                font-size: 12px;
+                padding: 10px 18px;
+                background: #f0f7f0;
+                color: #2E7D32;
+                border: 1px solid rgba(46, 125, 50, 0.1);
             }
 
             .hero-experience-tag {
-                top: -10px;
+                top: -15px;
                 right: 0;
-                padding: 12px;
+                padding: 14px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             }
 
-            /* Hero buttons - full width stacked */
-            .hero-buttons {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .btn-primary,
-            .btn-secondary {
-                width: 100%;
-                justify-content: center;
-                padding: 16px 24px;
-            }
-
-            /* Hero trust bar: 2 columns grid */
+            /* Solutions Grid 2x2 */
             .hero-trust-bar {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 16px;
-                padding: 20px;
-                margin-top: 32px;
+                padding: 16px 0;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                overflow: hidden;
+            }
+
+            .trust-bar-track {
+                width: max-content;
+                gap: 24px;
+                animation: trustScroll 20s linear infinite;
+                justify-content: flex-start;
             }
 
             .trust-stat {
-                border-right: none;
+                min-width: auto;
                 padding: 0;
-                gap: 10px;
+                border: none;
+                flex-shrink: 0;
+                white-space: nowrap;
             }
 
-            .stat-info h4 {
-                font-size: 15px;
+            .marquee-only {
+                display: flex !important;
             }
 
-            .stat-info p {
-                font-size: 10px;
+            @keyframes trustScroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+
+            .product-preview .trust-stat {
+                background: white;
+                padding: 20px 16px;
+                border: 1px solid #efefef;
+                border-radius: 12px;
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .product-preview .stat-icon {
+                margin: 0 auto;
             }
 
             /* Trust section */
@@ -1995,19 +2085,26 @@
                 font-size: 28px;
             }
 
-            /* Product trust bar inside product preview */
-            .product-preview .hero-trust-bar {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
 
             /* USP section */
+            .usp-grid-container {
+                overflow: hidden;
+                margin: 0 -24px;
+                padding: 0 24px;
+            }
+
             .usp-grid {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-wrap: nowrap;
+                width: max-content;
+                animation: trustScroll 25s linear infinite;
+                gap: 20px;
             }
 
             .usp-card {
                 padding: 32px 20px;
+                width: 280px;
+                flex-shrink: 0;
             }
 
             .usp-section {
@@ -2031,8 +2128,10 @@
                 gap: 8px;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
-                padding-bottom: 8px;
+                padding: 4px 0 12px;
                 scrollbar-width: none;
+                flex-wrap: nowrap;
+                width: 100%;
             }
 
             .filter-buttons-row::-webkit-scrollbar {
@@ -2049,11 +2148,31 @@
             /* All products grid */
             .all-products {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .all-products .product-card {
+                padding: 16px;
+                border-radius: 16px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            }
+
+            .all-products .product-card .product-image {
+                height: 180px;
+                border-radius: 12px;
+                margin-bottom: 16px;
+            }
+
+            .all-products .product-card h3 {
+                font-size: 18px;
+                margin-bottom: 4px;
             }
 
             .all-products .product-card .btn-primary {
                 width: 100%;
                 justify-content: center;
+                border-radius: 8px;
+                padding: 14px;
             }
 
             /* Testimonials: swipe scroll */
@@ -2163,69 +2282,70 @@
                 gap: 40px;
             }
 
-            .faq-content h2 {
-                font-size: 32px;
-                letter-spacing: -1px;
-            }
-
-            .faq-content p {
-                font-size: 15px;
-            }
-
+            /* FAQ */
             .accordion-header {
-                padding: 18px 20px;
-                min-height: 60px;
+                padding: 20px;
+                border: 1px solid #f0f0f0;
+                margin-bottom: 8px;
+                border-radius: 12px !important;
             }
 
-            .accordion-header h4 {
-                font-size: 15px;
+            .faq-content h2 {
+                font-size: 34px;
+                line-height: 1.1;
             }
 
-            .content-inner {
-                padding: 0 20px 20px 20px;
-            }
-
-            /* Final CTA */
+            /* CTA Section Styling */
             .final-cta {
-                padding: 60px 0;
+                padding: 48px 0;
+                background: #1b5e20;
+            }
+
+            .final-cta .container {
+                padding: 0 16px;
             }
 
             .final-cta h2 {
-                font-size: 24px;
+                font-size: 28px;
+                margin-bottom: 24px;
             }
 
             .final-cta .btn-primary {
                 width: 100%;
+                max-width: none;
                 justify-content: center;
-                max-width: 360px;
-                margin: 0 auto;
+                border-radius: 8px;
+                background: linear-gradient(to right, #FF6F00, #FF8F00);
             }
 
-            .final-cta .container {
-                padding: 0 20px;
-            }
-
-            /* Footer */
+            /* Footer updates */
             footer {
                 padding: 60px 0 32px;
+                background: #111;
             }
 
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
+                gap: 40px 20px;
                 text-align: left;
             }
 
             .footer-section h4 {
-                margin-bottom: 16px;
+                margin-bottom: 20px;
+                font-size: 16px;
+                color: var(--primary-green);
             }
 
             .social-icons {
-                justify-content: flex-start;
+                justify-content: center;
+                gap: 20px;
             }
 
             .footer-bottom {
-                font-size: 12px;
+                margin-top: 40px;
+                padding-top: 24px;
+                font-size: 11px;
+                opacity: 0.6;
             }
 
             /* Sections padding */
@@ -2322,6 +2442,10 @@
         <!-- HEADER & NAV -->
         <header>
             <div class="header-content">
+                <!-- Hamburger for mobile -->
+                <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+                    <i data-lucide="menu" size="24"></i>
+                </button>
                 <a href="#" class="logo">
                     <img src="image copy.png" alt="Maruthi Enterprises Logo">
                     <div class="logo-text">
@@ -2337,10 +2461,9 @@
                 </nav>
                 <button class="cta-header"
                     onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Quote</button>
-                <!-- Hamburger for mobile -->
-                <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
-                    <i data-lucide="menu" size="24"></i>
-                </button>
+                <a href="tel:+919944365636" class="mobile-right-action">
+                    <i data-lucide="phone" size="24"></i>
+                </a>
             </div>
         </header>
     </div>
@@ -2349,16 +2472,33 @@
     <div class="drawer-overlay" id="drawerOverlay"></div>
     <div class="mobile-drawer" id="mobileDrawer">
         <div class="drawer-header">
-            <span style="font-weight: 800; font-size: 16px; color: var(--dark-text);">Menu</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 32px; height: 32px; background: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #1b5e20;">
+                    <i data-lucide="leaf" size="18"></i>
+                </div>
+                <span style="font-weight: 700; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase;">Maize Starch Enterprises</span>
+            </div>
             <button class="drawer-close" id="drawerClose" aria-label="Close menu">
                 <i data-lucide="x" size="20"></i>
             </button>
         </div>
-        <a href="#products" class="drawer-link">Products</a>
-        <a href="#why-us" class="drawer-link">Why Us</a>
-        <a href="#testimonials" class="drawer-link">Testimonials</a>
-        <a href="#contact" class="drawer-link">Contact</a>
-        <a href="#contact" class="cta-drawer">Get Quote</a>
+        <div class="drawer-nav">
+            <a href="#" class="drawer-item"><i data-lucide="home" size="20"></i> Home</a>
+            <a href="#why-us" class="drawer-item"><i data-lucide="user" size="20"></i> About Us</a>
+            <a href="#products" class="drawer-item"><i data-lucide="package" size="20"></i> Products</a>
+            <a href="#why-us" class="drawer-item"><i data-lucide="factory" size="20"></i> Industries</a>
+            <a href="#why-us" class="drawer-item"><i data-lucide="shield" size="20"></i> Quality</a>
+            <a href="#products" class="drawer-item"><i data-lucide="award" size="20"></i> Certifications</a>
+            <a href="#testimonials" class="drawer-item"><i data-lucide="message-square" size="20"></i> Testimonials</a>
+            <a href="#contact" class="drawer-item"><i data-lucide="help-circle" size="20"></i> FAQ</a>
+            <a href="#contact" class="drawer-item"><i data-lucide="phone" size="20"></i> Contact Us</a>
+        </div>
+        <div class="drawer-footer">
+            <a href="tel:+919944365636" class="drawer-btn">
+                <i data-lucide="phone-call" size="20"></i>
+                Call Us Now
+            </a>
+        </div>
     </div>
 
     <!-- HERO SECTION -->
@@ -2367,9 +2507,9 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-badge">
-                        <span>🍃</span> 23+ Years of Trust & Quality
+                        <span>🍃</span> 20+ YEARS OF TRUST & QUALITY
                     </div>
-                    <h1>India's Trusted <br><span class="highlight">Maize Starch</span> Supplier</h1>
+                    <h1>India's Trusted <span class="highlight">Maize Starch Supplier</span></h1>
                     <p class="subtext">Delivering premium-quality starch products with consistency, purity, and
                         reliability to power industries across India and beyond.</p>
 
@@ -2409,39 +2549,78 @@
             </div>
 
             <div class="hero-trust-bar">
-                <div class="trust-stat">
-                    <div class="stat-icon">🛡️</div>
-                    <div class="stat-info">
-                        <h4>FSSAI</h4>
-                        <p>Certified Mfg.</p>
+                <div class="trust-bar-track">
+                    <!-- Original Items -->
+                    <div class="trust-stat">
+                        <div class="stat-icon">🛡️</div>
+                        <div class="stat-info">
+                            <h4>FSSAI</h4>
+                            <p>Certified Mfg.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="trust-stat">
-                    <div class="stat-icon">🏢</div>
-                    <div class="stat-info">
-                        <h4>MSME</h4>
-                        <p>Registered</p>
+                    <div class="trust-stat">
+                        <div class="stat-icon">🏢</div>
+                        <div class="stat-info">
+                            <h4>MSME</h4>
+                            <p>Registered</p>
+                        </div>
                     </div>
-                </div>
-                <div class="trust-stat">
-                    <div class="stat-icon">☪️</div>
-                    <div class="stat-info">
-                        <h4>HALAL</h4>
-                        <p>Certified</p>
+                    <div class="trust-stat">
+                        <div class="stat-icon">☪️</div>
+                        <div class="stat-info">
+                            <h4>HALAL</h4>
+                            <p>Certified</p>
+                        </div>
                     </div>
-                </div>
-                <div class="trust-stat">
-                    <div class="stat-icon">👥</div>
-                    <div class="stat-info">
-                        <h4>500+</h4>
-                        <p>Happy Clients</p>
+                    <div class="trust-stat">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h4>500+</h4>
+                            <p>Happy Clients</p>
+                        </div>
                     </div>
-                </div>
-                <div class="trust-stat">
-                    <div class="stat-icon">⏳</div>
-                    <div class="stat-info">
-                        <h4>23+</h4>
-                        <p>Years Exp.</p>
+                    <div class="trust-stat">
+                        <div class="stat-icon">⏳</div>
+                        <div class="stat-info">
+                            <h4>23+</h4>
+                            <p>Years Exp.</p>
+                        </div>
+                    </div>
+                    <!-- Duplicated Items for Loop -->
+                    <div class="trust-stat marquee-only">
+                        <div class="stat-icon">🛡️</div>
+                        <div class="stat-info">
+                            <h4>FSSAI</h4>
+                            <p>Certified Mfg.</p>
+                        </div>
+                    </div>
+                    <div class="trust-stat marquee-only">
+                        <div class="stat-icon">🏢</div>
+                        <div class="stat-info">
+                            <h4>MSME</h4>
+                            <p>Registered</p>
+                        </div>
+                    </div>
+                    <div class="trust-stat marquee-only">
+                        <div class="stat-icon">☪️</div>
+                        <div class="stat-info">
+                            <h4>HALAL</h4>
+                            <p>Certified</p>
+                        </div>
+                    </div>
+                    <div class="trust-stat marquee-only">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h4>500+</h4>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                    <div class="trust-stat marquee-only">
+                        <div class="stat-icon">⏳</div>
+                        <div class="stat-info">
+                            <h4>23+</h4>
+                            <p>Years Exp.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2455,33 +2634,69 @@
                 <div class="hero-badge" style="margin: 0 auto 16px; display: table;">
                     <span>★</span> OUR PRODUCTS
                 </div>
-                <h2 style="font-size: 48px; font-weight: 800; letter-spacing: -1.5px;">Premium <span
-                        class="highlight">Maize Starch Solutions</span></h2>
+                <h2>Premium <span class="highlight">Maize Starch Solutions</span></h2>
                 <p style="font-size: 18px; margin-top: 10px;">High-quality, versatile starch products crafted to meet
                     diverse industrial needs</p>
             </div>
 
-            <div class="hero-trust-bar"
-                style="max-width: 900px; margin: 0 auto 48px; background: rgba(255, 255, 255, 0.5);">
-                <div class="trust-stat">
-                    <div class="stat-icon" style="background: rgba(46, 125, 50, 0.1);">🌿</div>
-                    <div class="stat-info">
-                        <h4>Premium Quality</h4>
-                        <p>Consistent purity & performance</p>
+            <div class="hero-trust-bar">
+                <div class="trust-bar-track">
+                    <div class="trust-stat">
+                        <div class="stat-icon" style="background: #f0f7f0;">🌿</div>
+                        <div class="stat-info">
+                            <h4>Premium Quality</h4>
+                            <p>Consistent purity in every batch</p>
+                        </div>
                     </div>
-                </div>
-                <div class="trust-stat">
-                    <div class="stat-icon" style="background: rgba(46, 125, 50, 0.1);">🛡️</div>
-                    <div class="stat-info">
-                        <h4>Trusted Partner</h4>
-                        <p>23+ years of industry expertise</p>
+                    <div class="trust-stat">
+                        <div class="stat-icon" style="background: #f0f7f0;">🛡️</div>
+                        <div class="stat-info">
+                            <h4>Trusted Partner</h4>
+                            <p>23+ years of industry experience</p>
+                        </div>
                     </div>
-                </div>
-                <div class="trust-stat">
-                    <div class="stat-icon" style="background: rgba(46, 125, 50, 0.1);">🚛</div>
-                    <div class="stat-info">
-                        <h4>Reliable Delivery</h4>
-                        <p>On-time, every time</p>
+                    <div class="trust-stat">
+                        <div class="stat-icon" style="background: #f0f7f0;">🚛</div>
+                        <div class="stat-info">
+                            <h4>Reliable Delivery</h4>
+                            <p>On-time supply across India</p>
+                        </div>
+                    </div>
+                    <div class="trust-stat">
+                        <div class="stat-icon" style="background: #f0f7f0;">⚙️</div>
+                        <div class="stat-info">
+                            <h4>Custom Solutions</h4>
+                            <p>Tailored for your unique needs</p>
+                        </div>
+                    </div>
+                    <!-- Duplicated Items -->
+                    <div class="trust-stat marquee-only">
+                        <div class="stat-icon" style="background: #f0f7f0;">🌿</div>
+                        <div class="stat-info">
+                            <h4>Premium Quality</h4>
+                            <p>Consistent purity in every batch</p>
+                        </div>
+                    </div>
+                    <div class="trust-stat marquee-only">
+                        <div class="stat-icon" style="background: #f0f7f0;">🛡️</div>
+                        <div class="stat-info">
+                            <h4>Trusted Partner</h4>
+                            <p>23+ years of industry experience</p>
+                        </div>
+                    </div>
+                    <div class="trust-stat marquee-only">
+                        <div class="stat-icon" style="background: #f0f7f0;">🚛</div>
+                        <div class="stat-info">
+                            <h4>Reliable Delivery</h4>
+                            <p>On-time supply across India</p>
+                        </div>
+                    </div>
+                    <div class="trust-stat marquee-only">
+                        <div class="stat-icon" style="background: #f0f7f0;">⚙️</div>
+                        <div class="stat-info">
+                            <h4>Custom Solutions</h4>
+                            <p>Tailored for your unique needs</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2604,49 +2819,95 @@
     <section class="usp-section" id="why-us">
         <div class="container">
             <div class="section-header">
-                <h2>Why Choose Us?</h2>
+                <h2>Why Choose <span class="highlight">Us?</span></h2>
                 <p>Quality and reliability you can trust</p>
             </div>
-            <div class="usp-grid">
-                <div class="usp-card">
-                    <div class="usp-icon-wrapper">
-                        <div class="usp-icon-leaf"></div>
-                        <div class="usp-icon">💎</div>
+            <div class="usp-grid-container">
+                <div class="usp-grid">
+                    <div class="usp-card">
+                        <div class="usp-icon-wrapper">
+                            <div class="usp-icon-leaf"></div>
+                            <div class="usp-icon">💎</div>
+                        </div>
+                        <div class="usp-content">
+                            <h3>High Quality</h3>
+                            <p>Stringent quality control at every stage ensures our starch meets international standards.
+                            </p>
+                        </div>
                     </div>
-                    <div class="usp-content">
-                        <h3>High Quality</h3>
-                        <p>Stringent quality control at every stage ensures our starch meets international standards.
-                        </p>
+                    <div class="usp-card">
+                        <div class="usp-icon-wrapper">
+                            <div class="usp-icon-leaf"></div>
+                            <div class="usp-icon">⏱️</div>
+                        </div>
+                        <div class="usp-content">
+                            <h3>On-Time Delivery</h3>
+                            <p>Reliable logistics network ensures your orders arrive on schedule, every time.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="usp-card">
-                    <div class="usp-icon-wrapper">
-                        <div class="usp-icon-leaf"></div>
-                        <div class="usp-icon">⏱️</div>
+                    <div class="usp-card">
+                        <div class="usp-icon-wrapper">
+                            <div class="usp-icon-leaf"></div>
+                            <div class="usp-icon">🏢</div>
+                        </div>
+                        <div class="usp-content">
+                            <h3>Industry Expertise</h3>
+                            <p>23+ years of experience in providing specialized starch solutions to various industries.
+                            </p>
+                        </div>
                     </div>
-                    <div class="usp-content">
-                        <h3>On-Time Delivery</h3>
-                        <p>Reliable logistics network ensures your orders arrive on schedule, every time.</p>
+                    <div class="usp-card">
+                        <div class="usp-icon-wrapper">
+                            <div class="usp-icon-leaf"></div>
+                            <div class="usp-icon">💰</div>
+                        </div>
+                        <div class="usp-content">
+                            <h3>Competitive Pricing</h3>
+                            <p>Best value for money with flexible payment options for bulk orders.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="usp-card">
-                    <div class="usp-icon-wrapper">
-                        <div class="usp-icon-leaf"></div>
-                        <div class="usp-icon">🏢</div>
+                    <!-- Duplicated Items for Mobile Marquee -->
+                    <div class="usp-card marquee-only">
+                        <div class="usp-icon-wrapper">
+                            <div class="usp-icon-leaf"></div>
+                            <div class="usp-icon">💎</div>
+                        </div>
+                        <div class="usp-content">
+                            <h3>High Quality</h3>
+                            <p>Stringent quality control at every stage ensures our starch meets international standards.
+                            </p>
+                        </div>
                     </div>
-                    <div class="usp-content">
-                        <h3>Industry Expertise</h3>
-                        <p>23+ years of experience in providing specialized starch solutions to various industries.</p>
+                    <div class="usp-card marquee-only">
+                        <div class="usp-icon-wrapper">
+                            <div class="usp-icon-leaf"></div>
+                            <div class="usp-icon">⏱️</div>
+                        </div>
+                        <div class="usp-content">
+                            <h3>On-Time Delivery</h3>
+                            <p>Reliable logistics network ensures your orders arrive on schedule, every time.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="usp-card">
-                    <div class="usp-icon-wrapper">
-                        <div class="usp-icon-leaf"></div>
-                        <div class="usp-icon">💰</div>
+                    <div class="usp-card marquee-only">
+                        <div class="usp-icon-wrapper">
+                            <div class="usp-icon-leaf"></div>
+                            <div class="usp-icon">🏢</div>
+                        </div>
+                        <div class="usp-content">
+                            <h3>Industry Expertise</h3>
+                            <p>23+ years of experience in providing specialized starch solutions to various industries.
+                            </p>
+                        </div>
                     </div>
-                    <div class="usp-content">
-                        <h3>Competitive Pricing</h3>
-                        <p>Best value for money with flexible payment options for bulk orders.</p>
+                    <div class="usp-card marquee-only">
+                        <div class="usp-icon-wrapper">
+                            <div class="usp-icon-leaf"></div>
+                            <div class="usp-icon">💰</div>
+                        </div>
+                        <div class="usp-content">
+                            <h3>Competitive Pricing</h3>
+                            <p>Best value for money with flexible payment options for bulk orders.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2657,7 +2918,7 @@
     <section class="detailed-products reveal" id="products">
         <div class="container">
             <div class="section-header">
-                <h2>Complete Product Range</h2>
+                <h2>Complete <span class="highlight">Product Range</span></h2>
                 <p>Comprehensive solutions for every requirement</p>
             </div>
 
@@ -2746,7 +3007,7 @@
     <section class="testimonials-section reveal" id="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2>Client Testimonials</h2>
+                <h2>Client <span class="highlight">Testimonials</span></h2>
                 <p>What our satisfied clients say about us</p>
             </div>
         </div>
@@ -2855,7 +3116,7 @@
                         <i data-lucide="help-circle" size="14"></i>
                         Frequently asked questions
                     </div>
-                    <h2>Frequently asked <br><span>questions</span></h2>
+                    <h2>Frequently <span class="highlight">Asked Questions</span></h2>
                     <p>High-quality, reliable solutions tailored to your industrial needs. Find answers to our most
                         common queries below.</p>
                 </div>
@@ -2920,7 +3181,7 @@
     <!-- FINAL CTA -->
     <section class="final-cta">
         <div class="container">
-            <h2>Ready to Experience Premium Quality?</h2>
+            <h2>Ready to Experience <span class="highlight">Premium Quality?</span></h2>
             <p>Get the best quality maize starch delivered right to your doorstep</p>
             <button class="btn-primary" style="margin: 0 auto; display: inline-flex;"
                 onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote
@@ -2937,7 +3198,7 @@
                         <i data-lucide="leaf" size="16"></i>
                         LET'S CONNECT
                     </div>
-                    <h2 class="contact-heading">Let's Build Something <span>Great Together</span></h2>
+                    <h2 class="contact-heading">Let's Build Something <span class="highlight">Great Together</span></h2>
                     <p class="contact-description">Have questions about our maize starch products? Our team is here to
                         help you find the perfect solution.</p>
 
@@ -3187,7 +3448,7 @@
         drawerOverlay.addEventListener('click', closeDrawer);
 
         // Close drawer on link click
-        document.querySelectorAll('.drawer-link, .cta-drawer').forEach(link => {
+        document.querySelectorAll('.drawer-item, .drawer-btn').forEach(link => {
             link.addEventListener('click', closeDrawer);
         });
 
