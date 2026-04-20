@@ -450,7 +450,8 @@
             transition: all 0.3s ease;
         }
 
-        .drawer-item:hover, .drawer-item.active {
+        .drawer-item:hover,
+        .drawer-item.active {
             background: rgba(46, 125, 50, 0.05);
             color: var(--primary-green);
             border-left-color: var(--primary-green);
@@ -981,7 +982,8 @@
         }
 
         .filter-icon-btn {
-            display: none; /* Only on mobile */
+            display: none;
+            /* Only on mobile */
             width: 44px;
             height: 44px;
             background: var(--primary-green);
@@ -2081,8 +2083,13 @@
             }
 
             @keyframes trustScroll {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
             }
 
             .product-preview .trust-stat {
@@ -2180,17 +2187,19 @@
 
             .filter-btn {
                 flex-shrink: 0;
-                border-radius: 100px; /* Pill style */
+                border-radius: 100px;
+                /* Pill style */
                 padding: 10px 24px;
                 font-size: 13px;
                 white-space: nowrap;
                 border: 1px solid #efefef;
                 background: white;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
             }
 
             .filter-btn::after {
-                display: none; /* Hide old underline indicator for pill style */
+                display: none;
+                /* Hide old underline indicator for pill style */
             }
 
             .filter-btn.active {
@@ -2213,8 +2222,8 @@
                 border-radius: 16px;
                 gap: 16px;
                 background: white;
-                border: 1px solid rgba(0,0,0,0.04);
-                box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+                border: 1px solid rgba(0, 0, 0, 0.04);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
             }
 
             .all-products .product-card .product-image {
@@ -2240,7 +2249,8 @@
             }
 
             .all-products .product-card .spec {
-                display: none; /* Hide specs on mobile list view for cleaner look */
+                display: none;
+                /* Hide specs on mobile list view for cleaner look */
             }
 
             .all-products .product-card p:not(.spec) {
@@ -2532,6 +2542,58 @@
                 border-bottom: none;
             }
         }
+
+        /* Particle Preview */
+        .particle-preview {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            background-color: #f0f7f0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .particle-dot {
+            position: absolute;
+            background: rgba(46, 125, 50, 0.4);
+            border-radius: 50%;
+        }
+
+        .powder .particle-dot {
+            width: 2px;
+            height: 2px;
+        }
+
+        .crystal .particle-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 1px;
+            transform: rotate(45deg);
+        }
+
+        .liquid .particle-dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(46, 125, 50, 0.1);
+            filter: blur(2px);
+        }
+
+        .particle-preview-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            background: #f8faf8;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--secondary-text);
+        }
     </style>
 </head>
 
@@ -2616,7 +2678,8 @@
     <div class="mobile-drawer" id="mobileDrawer">
         <div class="drawer-header">
             <a href="#" class="logo" style="text-decoration: none;">
-                <img src="image copy.png" alt="Maruthi logo" style="height: 36px; background: white; border-radius: 4px; padding: 2px;">
+                <img src="image copy.png" alt="Maruthi logo"
+                    style="height: 36px; background: white; border-radius: 4px; padding: 2px;">
                 <div class="logo-text">
                     <span class="brand-name" style="color: white; font-size: 14px;">Maruthi's Enterprises</span>
                     <span class="since" style="color: rgba(255,255,255,0.7); font-size: 9px;">Since 2000</span>
@@ -2975,7 +3038,8 @@
                         </div>
                         <div class="usp-content">
                             <h3>High Quality</h3>
-                            <p>Stringent quality control at every stage ensures our starch meets international standards.
+                            <p>Stringent quality control at every stage ensures our starch meets international
+                                standards.
                             </p>
                         </div>
                     </div>
@@ -3018,7 +3082,8 @@
                         </div>
                         <div class="usp-content">
                             <h3>High Quality</h3>
-                            <p>Stringent quality control at every stage ensures our starch meets international standards.
+                            <p>Stringent quality control at every stage ensures our starch meets international
+                                standards.
                             </p>
                         </div>
                     </div>
@@ -3143,6 +3208,113 @@
                         <h3>Custom Formulations</h3>
                         <p class="spec">Made to Order</p>
                         <p>Specialized starch solutions for unique needs</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <!-- New Products -->
+                <div class="product-card" data-category="food" data-name="maltodextrine">
+                    <div class="product-image"><img src="maltodextrine.png" alt="Maltodextrine"></div>
+                    <div class="product-info">
+                        <h3>Maltodextrine</h3>
+                        <div class="particle-preview-container">
+                            <div class="particle-preview powder" data-type="powder"></div>
+                            <span>FINE POWDER PROFILE</span>
+                        </div>
+                        <p class="spec">25kg | 50kg Bags</p>
+                        <p>High-purity carbohydrate used for texture and stability in food & beverages.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="food" data-name="skimmed milk powder">
+                    <div class="product-image"><img src="milk-powder.png" alt="Skimmed Milk Powder"></div>
+                    <div class="product-info">
+                        <h3>Skimmed Milk Powder</h3>
+                        <div class="particle-preview-container">
+                            <div class="particle-preview powder" data-type="powder"></div>
+                            <span>SPRAY-DRIED PROFILE</span>
+                        </div>
+                        <p class="spec">25kg Bags</p>
+                        <p>Premium spray-dried milk powder for bakery, dairy, and confectionery.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="food" data-name="cocoa powder">
+                    <div class="product-image"><img src="cocoa-powder.png" alt="Cocoa Powder"></div>
+                    <div class="product-info">
+                        <h3>Cocoa Powder</h3>
+                        <div class="particle-preview-container">
+                            <div class="particle-preview powder" data-type="powder" style="--particle-color: #3e2723;">
+                            </div>
+                            <span>200 MESH PROFILE</span>
+                        </div>
+                        <p class="spec">25kg Bags</p>
+                        <p>Rich, premium cocoa powder for chocolate and flavoring applications.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="specialized" data-name="glucose d">
+                    <div class="product-image"><img src="glucose-d.png" alt="Glucose D"></div>
+                    <div class="product-info">
+                        <h3>Glucose D</h3>
+                        <div class="particle-preview-container">
+                            <div class="particle-preview crystal" data-type="crystal"></div>
+                            <span>CRYSTALLINE PROFILE</span>
+                        </div>
+                        <p class="spec">500g - 50kg Packs</p>
+                        <p>Dextrose monohydrate for instant energy and sweetness in food & pharma.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="industrial" data-name="liquid glucose">
+                    <div class="product-image"><img src="liquid-glucose.png" alt="Liquid Glucose"></div>
+                    <div class="product-info">
+                        <h3>Liquid Glucose</h3>
+                        <div class="particle-preview-container">
+                            <div class="particle-preview liquid" data-type="liquid"></div>
+                            <span>VISCOUS LIQUID PROFILE</span>
+                        </div>
+                        <p class="spec">300kg Drums</p>
+                        <p>Clear, viscous sweetener used in confectionery and pharma syrups.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="specialized" data-name="sorbitol">
+                    <div class="product-image"><img src="sorbitol.png" alt="Sorbitol"></div>
+                    <div class="product-info">
+                        <h3>Sorbitol</h3>
+                        <div class="particle-preview-container">
+                            <div class="particle-preview powder" data-type="powder"></div>
+                            <span>HYGROSCOPIC PROFILE</span>
+                        </div>
+                        <p class="spec">Bulk Only</p>
+                        <p>Sugar alcohol used as a sweetener, humectant, and texturizer.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                            Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="industrial" data-name="high maltose corn syrup">
+                    <div class="product-image"><img src="corn-syrup.png" alt="High Maltose Corn Syrup"></div>
+                    <div class="product-info">
+                        <h3>High Maltose Corn Syrup</h3>
+                        <div class="particle-preview-container">
+                            <div class="particle-preview liquid" data-type="liquid"></div>
+                            <span>MALTOSE ENRICHED SYRUP</span>
+                        </div>
+                        <p class="spec">300kg Drums</p>
+                        <p>Premium syrup ideal for hard candy, brewing, and bakery products.</p>
                         <button class="btn-primary" style="width:100%;justify-content:center;"
                             onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
                             Quote</button>
@@ -3480,6 +3652,13 @@
                                     <option>Premium Bleached Starch</option>
                                     <option>Cross-Linked Starch</option>
                                     <option>Custom Formulations</option>
+                                    <option>Maltodextrine</option>
+                                    <option>Skimmed Milk Powder</option>
+                                    <option>Cocoa Powder</option>
+                                    <option>Glucose D</option>
+                                    <option>Liquid Glucose</option>
+                                    <option>Sorbitol</option>
+                                    <option>High Maltose Corn Syrup</option>
                                 </select>
                             </div>
                         </div>
@@ -3680,8 +3859,42 @@
         handleTestimonialsResponsive();
         window.addEventListener('resize', handleTestimonialsResponsive);
 
+        // ===== PARTICLE GENERATION =====
+        function generateParticles() {
+            document.querySelectorAll('.particle-preview').forEach(preview => {
+                const type = preview.dataset.type;
+                const count = type === 'liquid' ? 5 : 40;
+                const color = preview.style.getPropertyValue('--particle-color') || 'rgba(46, 125, 50, 0.4)';
+
+                preview.innerHTML = ''; // Clear existing
+
+                for (let i = 0; i < count; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'particle-dot';
+
+                    const x = Math.random() * 100;
+                    const y = Math.random() * 100;
+
+                    dot.style.left = x + '%';
+                    dot.style.top = y + '%';
+                    dot.style.backgroundColor = color;
+
+                    if (type === 'crystal') {
+                        dot.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    } else if (type === 'liquid') {
+                        dot.style.opacity = Math.random() * 0.5;
+                        dot.style.width = (Math.random() * 15 + 5) + 'px';
+                        dot.style.height = dot.style.width;
+                    }
+
+                    preview.appendChild(dot);
+                }
+            });
+        }
+
         // ===== INITIAL REVEAL =====
         document.addEventListener('DOMContentLoaded', () => {
+            generateParticles();
             document.querySelectorAll('.reveal').forEach(el => {
                 if (el.getBoundingClientRect().top < window.innerHeight) {
                     el.classList.add('active');
