@@ -174,19 +174,27 @@
         .top-bar-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            line-height: 1;
         }
 
-        .top-bar-item i {
-            stroke-width: 1.5px;
+        .top-bar-item i,
+        .top-bar-item svg {
+            width: 12px;
+            height: 12px;
+            stroke-width: 2px;
             filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .top-bar-item:hover i {
+        .top-bar-item:hover i,
+        .top-bar-item:hover svg {
             filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6));
             transform: rotate(-5deg) scale(1.1);
         }
@@ -2634,7 +2642,7 @@
                     <div class="top-bar-item">
                         <div class="status-dot"></div>
                         <i data-lucide="phone" size="10" stroke-width="1.5"></i>
-                        +91 99443 65636
+                        +91 82480 91626
                     </div>
                     <div class="top-bar-item">
                         <i data-lucide="globe" size="10" stroke-width="1.5"></i>
@@ -2666,7 +2674,7 @@
                 </nav>
                 <button class="cta-header"
                     onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Quote</button>
-                <a href="tel:+919944365636" class="mobile-right-action">
+                <a href="tel:+918248091626" class="mobile-right-action">
                     <i data-lucide="phone" size="24"></i>
                 </a>
             </div>
@@ -2701,7 +2709,7 @@
             <a href="#contact" class="drawer-item"><i data-lucide="phone" size="20"></i> Contact Us</a>
         </div>
         <div class="drawer-footer">
-            <a href="tel:+919944365636" class="drawer-btn">
+            <a href="tel:+918248091626" class="drawer-btn">
                 <i data-lucide="phone-call" size="20"></i>
                 Call Us Now
             </a>
@@ -3630,7 +3638,7 @@
                             <label for="phone">Phone Number <span>*</span></label>
                             <div class="input-wrapper">
                                 <i data-lucide="phone" size="18"></i>
-                                <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+                                <input type="tel" id="phone" name="phone" required placeholder="+91 82480 91626">
                             </div>
                         </div>
                         <div class="form-group-custom">
@@ -3726,7 +3734,7 @@
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <p>📍 Industrial Area, Telangana 500001</p>
-                    <p>📞 +91 9876543210</p>
+                    <p>📞 +91 82480 91626</p>
                     <p>📧 info@maruthi-enterprises.com</p>
                     <div class="social-icons">
                         <div class="social-icon">f</div>
@@ -3836,8 +3844,32 @@
         // ===== CONTACT FORM =====
         function handleSubmit(event) {
             event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const product = document.getElementById('product').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappNumber = "918248091626";
+            const text = `*New Inquiry from Maruthi Enterprises Website*\n\n` +
+                `*Name:* ${name}\n` +
+                `*Phone:* ${phone}\n` +
+                `*Email:* ${email}\n` +
+                `*Product:* ${product}\n` +
+                `*Message:* ${message}`;
+
+            const encodedText = encodeURIComponent(text);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+            // Show success message
             const successMsg = document.getElementById('successMsg');
             successMsg.style.display = 'block';
+
+            // Open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
+
+            // Reset form
             document.getElementById('contactForm').reset();
             setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
         }
