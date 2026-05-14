@@ -805,6 +805,8 @@
             overflow: hidden;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card:hover {
@@ -836,6 +838,9 @@
 
         .product-info {
             padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .product-card h3 {
@@ -863,6 +868,7 @@
             text-align: center;
             padding: 12px 16px;
             font-size: 14px;
+            margin-top: auto;
         }
 
         /* ===== USP SECTION ===== */
@@ -2672,8 +2678,7 @@
                     <a href="#testimonials">Testimonials</a>
                     <a href="#contact">Contact</a>
                 </nav>
-                <button class="cta-header"
-                    onclick="openWhatsApp()">Get Quote</button>
+                <button class="cta-header" onclick="openWhatsApp()">Get Quote</button>
                 <a href="tel:+918248091626" class="mobile-right-action">
                     <i data-lucide="phone" size="24"></i>
                 </a>
@@ -2729,8 +2734,7 @@
                         reliability to power industries across India and beyond.</p>
 
                     <div class="hero-buttons">
-                        <button class="btn-primary"
-                            onclick="openWhatsApp()">
+                        <button class="btn-primary" onclick="openWhatsApp()">
                             Get a Quote
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2781,10 +2785,10 @@
                         </div>
                     </div>
                     <div class="trust-stat">
-                        <div class="stat-icon">☪️</div>
+                        <div class="stat-icon">⭐</div>
                         <div class="stat-info">
-                            <h4>HALAL</h4>
-                            <p>Certified</p>
+                            <h4>PREMIUM</h4>
+                            <p>Quality</p>
                         </div>
                     </div>
                     <div class="trust-stat">
@@ -2817,10 +2821,10 @@
                         </div>
                     </div>
                     <div class="trust-stat marquee-only">
-                        <div class="stat-icon">☪️</div>
+                        <div class="stat-icon">⭐</div>
                         <div class="stat-info">
-                            <h4>HALAL</h4>
-                            <p>Certified</p>
+                            <h4>PREMIUM</h4>
+                            <p>Quality</p>
                         </div>
                     </div>
                     <div class="trust-stat marquee-only">
@@ -2921,12 +2925,12 @@
                     <div
                         style="position: absolute; top: 10px; left: 10px; z-index: 10; background: rgba(255,255,255,0.95); padding: 2px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; color: #1b5e20; display: flex; align-items: center; gap: 4px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                         🛡️ Food Grade</div>
-                    <div class="product-image" style="height: 200px;"><img src="food-grade.png"
-                            alt="Food Grade Maize Starch"></div>
-                    <div class="product-info" style="padding: 20px;">
-                        <h3 style="margin-bottom: 4px; font-size: 17px;">Food Grade Maize Starch</h3>
-                        <p class="spec" style="color: #2E7D32; font-weight: 600; font-size: 12px; margin-bottom: 8px;">
-                            50 kg & 25 kg Bags</p>
+                    <div class="product-image" style="height: 200px;"><img src="maize_starch.png"
+                            alt="Maize Starch Powder"></div>
+                    <div class="product-info"
+                        style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+                        <h3 style="margin-bottom: 4px; font-size: 17px;">Maize Starch Powder</h3>
+
                         <p
                             style="font-size: 13px; line-height: 1.5; margin-bottom: 12px; height: 3.2em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
                             Premium quality starch for food manufacturing, with superior whiteness and consistency</p>
@@ -2939,8 +2943,8 @@
                                 Food Safe</span>
                         </div>
                         <button class="btn-primary"
-                            style="width: 100%; border-radius: 6px; background: linear-gradient(to right, #FF6F00, #FF8F00); padding: 10px 16px; font-size: 13px; justify-content: center;"
-                            onclick="openWhatsApp('Food Grade Maize Starch')">
+                            style="width: 100%; border-radius: 6px; background: linear-gradient(to right, #FF6F00, #FF8F00); padding: 10px 16px; font-size: 13px; justify-content: center; margin-top: auto;"
+                            onclick="openWhatsApp('Maize Starch Powder')">
                             Get a Quote
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
@@ -2954,31 +2958,31 @@
                 <div class="product-card" style="position: relative; max-width: 100%;">
                     <div
                         style="position: absolute; top: 10px; left: 10px; z-index: 10; background: rgba(255,255,255,0.95); padding: 2px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; color: #1b5e20; display: flex; align-items: center; gap: 4px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        ⚙️ Industrial Grade</div>
+                        ⚙️ Versatile Use</div>
                     <div class="product-image" style="height: 200px; position: relative;">
-                        <img src="industrial.png" alt="Industrial Maize Starch">
+                        <img src="maltodextrin.png" alt="Maltodextrin">
                         <div
                             style="position: absolute; bottom: 10px; right: 10px; width: 50px; height: 50px; background: #1b5e20; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-align: center; font-size: 8px; font-weight: 800; line-height: 1; border: 2px solid rgba(255,255,255,0.2); box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                            BULK<br>SUPPLY</div>
+                            PURE<br>QUALITY</div>
                     </div>
-                    <div class="product-info" style="padding: 20px;">
-                        <h3 style="margin-bottom: 4px; font-size: 17px;">Industrial Maize Starch</h3>
-                        <p class="spec" style="color: #2E7D32; font-weight: 600; font-size: 12px; margin-bottom: 8px;">
-                            1000 kg Bulk Orders</p>
+                    <div class="product-info"
+                        style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+                        <h3 style="margin-bottom: 4px; font-size: 17px;">Maltodextrin</h3>
+
                         <p
                             style="font-size: 13px; line-height: 1.5; margin-bottom: 12px; height: 3.2em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
-                            High-performance starch for textile, paper, and industrial applications</p>
+                            High-purity carbohydrate for texture and stability in food and beverage products</p>
                         <div style="display: flex; gap: 6px; margin-bottom: 15px; flex-wrap: wrap;">
                             <span
                                 style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">💧
-                                High Viscosity</span>
+                                Solubility</span>
                             <span
-                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">💰
-                                Cost Eff.</span>
+                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">⚡
+                                Energy</span>
                         </div>
                         <button class="btn-primary"
-                            style="width: 100%; border-radius: 6px; background: linear-gradient(to right, #FF6F00, #FF8F00); padding: 10px 16px; font-size: 13px; justify-content: center;"
-                            onclick="openWhatsApp('Industrial Maize Starch')">
+                            style="width: 100%; border-radius: 6px; background: linear-gradient(to right, #FF6F00, #FF8F00); padding: 10px 16px; font-size: 13px; justify-content: center; margin-top: auto;"
+                            onclick="openWhatsApp('Maltodextrin')">
                             Get a Quote
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
@@ -2992,31 +2996,31 @@
                 <div class="product-card" style="position: relative; max-width: 100%;">
                     <div
                         style="position: absolute; top: 10px; left: 10px; z-index: 10; background: rgba(255,255,255,0.95); padding: 2px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; color: #1b5e20; display: flex; align-items: center; gap: 4px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        🔬 Custom Solutions</div>
+                        🍬 Sweetening Agent</div>
                     <div class="product-image" style="height: 200px; position: relative;">
-                        <img src="modified.png" alt="Modified Maize Starch">
+                        <img src="liquid_glucose.png" alt="Liquid Glucose">
                         <div
                             style="position: absolute; bottom: 10px; right: 10px; width: 50px; height: 50px; background: #1b5e20; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-align: center; font-size: 8px; font-weight: 800; line-height: 1; border: 2px solid rgba(255,255,255,0.2); box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                            TAILORED<br>TO YOU</div>
+                            EXPERT<br>GRADE</div>
                     </div>
-                    <div class="product-info" style="padding: 20px;">
-                        <h3 style="margin-bottom: 4px; font-size: 17px;">Modified Maize Starch</h3>
-                        <p class="spec" style="color: #2E7D32; font-weight: 600; font-size: 12px; margin-bottom: 8px;">
-                            Custom Specifications</p>
+                    <div class="product-info"
+                        style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+                        <h3 style="margin-bottom: 4px; font-size: 17px;">Liquid Glucose</h3>
+
                         <p
                             style="font-size: 13px; line-height: 1.5; margin-bottom: 12px; height: 3.2em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
-                            Customized starch solutions tailored to your specific manufacturing needs</p>
+                            Clear, viscous sweetener essential for confectionery and pharmaceutical applications</p>
                         <div style="display: flex; gap: 6px; margin-bottom: 15px; flex-wrap: wrap;">
                             <span
-                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">⚙️
-                                Customizable</span>
+                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">🍯
+                                Viscosity</span>
                             <span
-                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">🛡️
-                                High Stability</span>
+                                style="background: #f0f7f0; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #2E7D32;">✨
+                                Clarity</span>
                         </div>
                         <button class="btn-primary"
-                            style="width: 100%; border-radius: 6px; background: linear-gradient(to right, #FF6F00, #FF8F00); padding: 10px 16px; font-size: 13px; justify-content: center;"
-                            onclick="openWhatsApp('Modified Maize Starch')">
+                            style="width: 100%; border-radius: 6px; background: linear-gradient(to right, #FF6F00, #FF8F00); padding: 10px 16px; font-size: 13px; justify-content: center; margin-top: auto;"
+                            onclick="openWhatsApp('Liquid Glucose')">
                             Get a Quote
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
@@ -3139,196 +3143,142 @@
                 <p>Comprehensive solutions for every requirement</p>
             </div>
 
-            <div class="filter-bar">
-                <div class="search-group">
-                    <input type="text" class="search-box" id="productSearch" placeholder="Search products...">
-                    <button class="filter-icon-btn" aria-label="Filter">
-                        <i data-lucide="sliders-horizontal" size="20"></i>
-                    </button>
-                </div>
-                <div class="filter-buttons-row">
-                    <button class="filter-btn active" data-category="all">All</button>
-                    <button class="filter-btn" data-category="food">Food Grade</button>
-                    <button class="filter-btn" data-category="industrial">Industrial</button>
-                    <button class="filter-btn" data-category="specialized">Specialized</button>
-                </div>
-            </div>
+
 
             <div class="all-products" id="productGrid">
-                <div class="product-card" data-category="food" data-name="standard maize starch">
-                    <div class="product-image"><img src="standard.png" alt="Standard Maize Starch"></div>
+                <div class="product-card" data-category="food" data-name="maize starch powder">
+                    <div class="product-image"><img src="maize_starch.png" alt="Maize Starch Powder"></div>
                     <div class="product-info">
-                        <h3>Standard Maize Starch</h3>
-                        <p class="spec">50 kg | 25 kg | 1000 kg</p>
-                        <p>Our flagship product, trusted by manufacturers nationwide</p>
+                        <h3>Maize Starch Powder</h3>
+
+                        <p>Premium quality starch for food manufacturing, with superior whiteness and consistency</p>
                         <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Standard Maize Starch')">Get
-                            Quote</button>
+                            onclick="openWhatsApp('Maize Starch Powder')">Get Quote</button>
                     </div>
                 </div>
-                <div class="product-card" data-category="food" data-name="premium bleached starch">
-                    <div class="product-image"><img src="premium-bleached.png" alt="Premium Bleached Starch"></div>
+                <div class="product-card" data-category="food" data-name="maltodextrin">
+                    <div class="product-image"><img src="maltodextrin.png" alt="Maltodextrin"></div>
                     <div class="product-info">
-                        <h3>Premium Bleached Starch</h3>
-                        <p class="spec">50 kg | 25 kg</p>
-                        <p>Enhanced whiteness for premium food applications</p>
-                        <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Premium Bleached Starch')">Get
-                            Quote</button>
-                    </div>
-                </div>
-                <div class="product-card" data-category="industrial" data-name="cross-linked starch">
-                    <div class="product-image"><img src="cross-linked.png" alt="Cross-Linked Starch"></div>
-                    <div class="product-info">
-                        <h3>Cross-Linked Starch</h3>
-                        <p class="spec">Custom Orders</p>
-                        <p>Enhanced stability for demanding applications</p>
-                        <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Cross-Linked Starch')">Get
-                            Quote</button>
-                    </div>
-                </div>
-                <div class="product-card" data-category="food" data-name="pre-gelatinized starch">
-                    <div class="product-image"><img src="industrial.png" alt="Pre-Gelatinized Starch"></div>
-                    <div class="product-info">
-                        <h3>Pre-Gelatinized Starch</h3>
-                        <p class="spec">Bulk Available</p>
-                        <p>Ready-to-use starch for instant formulations</p>
-                        <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Pre-Gelatinized Starch')">Get
-                            Quote</button>
-                    </div>
-                </div>
-                <div class="product-card" data-category="industrial" data-name="paper grade starch">
-                    <div class="product-image"><img src="modified.png" alt="Paper Grade Starch"></div>
-                    <div class="product-info">
-                        <h3>Paper Grade Starch</h3>
-                        <p class="spec">1000 kg | Bulk</p>
-                        <p>Optimized for paper and textile industries</p>
-                        <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Paper Grade Starch')">Get
-                            Quote</button>
-                    </div>
-                </div>
-                <div class="product-card" data-category="specialized" data-name="custom formulations">
-                    <div class="product-image"><img src="standard.png" alt="Custom Formulations"></div>
-                    <div class="product-info">
-                        <h3>Custom Formulations</h3>
-                        <p class="spec">Made to Order</p>
-                        <p>Specialized starch solutions for unique needs</p>
-                        <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Custom Formulations')">Get
-                            Quote</button>
-                    </div>
-                </div>
-                <!-- New Products -->
-                <div class="product-card" data-category="food" data-name="maltodextrine">
-                    <div class="product-image"><img src="maltodextrine.png" alt="Maltodextrine"></div>
-                    <div class="product-info">
-                        <h3>Maltodextrine</h3>
-                        <div class="particle-preview-container">
-                            <div class="particle-preview powder" data-type="powder"></div>
-                            <span>FINE POWDER PROFILE</span>
-                        </div>
-                        <p class="spec">25kg | 50kg Bags</p>
+                        <h3>Maltodextrin</h3>
+
                         <p>High-purity carbohydrate used for texture and stability in food & beverages.</p>
                         <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Maltodextrine')">Get
-                            Quote</button>
+                            onclick="openWhatsApp('Maltodextrin')">Get Quote</button>
                     </div>
                 </div>
-                <div class="product-card" data-category="food" data-name="skimmed milk powder">
-                    <div class="product-image"><img src="milk-powder.png" alt="Skimmed Milk Powder"></div>
+                <div class="product-card" data-category="food" data-name="liquid glucose">
+                    <div class="product-image"><img src="liquid_glucose.png" alt="Liquid Glucose"></div>
                     <div class="product-info">
-                        <h3>Skimmed Milk Powder</h3>
-                        <div class="particle-preview-container">
-                            <div class="particle-preview powder" data-type="powder"></div>
-                            <span>SPRAY-DRIED PROFILE</span>
-                        </div>
-                        <p class="spec">25kg Bags</p>
-                        <p>Premium spray-dried milk powder for bakery, dairy, and confectionery.</p>
+                        <h3>Liquid Glucose</h3>
+
+                        <p>Clear, viscous sweetener used in confectionery and pharma syrups.</p>
                         <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Skimmed Milk Powder')">Get
-                            Quote</button>
+                            onclick="openWhatsApp('Liquid Glucose')">Get Quote</button>
                     </div>
                 </div>
-                <div class="product-card" data-category="food" data-name="cocoa powder">
-                    <div class="product-image"><img src="cocoa-powder.png" alt="Cocoa Powder"></div>
+                <div class="product-card" data-category="food" data-name="dextrose monohydrate">
+                    <div class="product-image"><img src="dextrose_monohydrate.png" alt="Dextrose Monohydrate"></div>
                     <div class="product-info">
-                        <h3>Cocoa Powder</h3>
-                        <div class="particle-preview-container">
-                            <div class="particle-preview powder" data-type="powder" style="--particle-color: #3e2723;">
-                            </div>
-                            <span>200 MESH PROFILE</span>
-                        </div>
-                        <p class="spec">25kg Bags</p>
-                        <p>Rich, premium cocoa powder for chocolate and flavoring applications.</p>
+                        <h3>Dextrose Monohydrate</h3>
+
+                        <p>High-quality sweetener used in food, beverages, and pharmaceutical products.</p>
                         <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Cocoa Powder')">Get
-                            Quote</button>
+                            onclick="openWhatsApp('Dextrose Monohydrate')">Get Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="industrial" data-name="thin boiling starch fabrilose - spl">
+                    <div class="product-image"><img src="thin_boiling_starch.png"
+                            alt="Thin Boiling Starch Fabrilose - SPL"></div>
+                    <div class="product-info">
+                        <h3>Thin Boiling Starch Fabrilose - SPL</h3>
+
+                        <p>Specialized modified starch for superior performance in textile and paper industries.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="openWhatsApp('Thin Boiling Starch Fabrilose - SPL')">Get Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="food" data-name="dextrose anhydrous">
+                    <div class="product-image"><img src="dextrose_anhydrous.png" alt="Dextrose Anhydrous"></div>
+                    <div class="product-info">
+                        <h3>Dextrose Anhydrous</h3>
+
+                        <p>Premium crystalline glucose for specialized food and pharmaceutical applications.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="openWhatsApp('Dextrose Anhydrous')">Get Quote</button>
                     </div>
                 </div>
                 <div class="product-card" data-category="specialized" data-name="glucose d">
-                    <div class="product-image"><img src="glucose-d.png" alt="Glucose D"></div>
+                    <div class="product-image"><img src="glucose_d.png" alt="Glucose D"></div>
                     <div class="product-info">
                         <h3>Glucose D</h3>
-                        <div class="particle-preview-container">
-                            <div class="particle-preview crystal" data-type="crystal"></div>
-                            <span>CRYSTALLINE PROFILE</span>
-                        </div>
-                        <p class="spec">500g - 50kg Packs</p>
-                        <p>Dextrose monohydrate for instant energy and sweetness in food & pharma.</p>
+
+                        <p>Dextrose monohydrate enriched with vitamin D for instant revitalization.</p>
                         <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Glucose D')">Get
-                            Quote</button>
-                    </div>
-                </div>
-                <div class="product-card" data-category="industrial" data-name="liquid glucose">
-                    <div class="product-image"><img src="liquid-glucose.png" alt="Liquid Glucose"></div>
-                    <div class="product-info">
-                        <h3>Liquid Glucose</h3>
-                        <div class="particle-preview-container">
-                            <div class="particle-preview liquid" data-type="liquid"></div>
-                            <span>VISCOUS LIQUID PROFILE</span>
-                        </div>
-                        <p class="spec">300kg Drums</p>
-                        <p>Clear, viscous sweetener used in confectionery and pharma syrups.</p>
-                        <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Liquid Glucose')">Get
-                            Quote</button>
+                            onclick="openWhatsApp('Glucose D')">Get Quote</button>
                     </div>
                 </div>
                 <div class="product-card" data-category="specialized" data-name="sorbitol">
                     <div class="product-image"><img src="sorbitol.png" alt="Sorbitol"></div>
                     <div class="product-info">
                         <h3>Sorbitol</h3>
-                        <div class="particle-preview-container">
-                            <div class="particle-preview powder" data-type="powder"></div>
-                            <span>HYGROSCOPIC PROFILE</span>
-                        </div>
-                        <p class="spec">Bulk Only</p>
-                        <p>Sugar alcohol used as a sweetener, humectant, and texturizer.</p>
+
+                        <p>Sugar alcohol used as a sweetener, humectant, and texturizer in various industries.</p>
                         <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('Sorbitol')">Get
-                            Quote</button>
+                            onclick="openWhatsApp('Sorbitol')">Get Quote</button>
                     </div>
                 </div>
-                <div class="product-card" data-category="industrial" data-name="high maltose corn syrup">
-                    <div class="product-image"><img src="corn-syrup.png" alt="High Maltose Corn Syrup"></div>
+                <div class="product-card" data-category="specialized" data-name="orange flavoured glucose">
+                    <div class="product-image"><img src="orange_glucose.png" alt="Orange Flavoured Glucose"></div>
+                    <div class="product-info">
+                        <h3>Orange Flavoured Glucose</h3>
+
+                        <p>Refreshing orange flavoured energy glucose for instant revitalization and hydration.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="openWhatsApp('Orange Flavoured Glucose')">Get Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="food" data-name="pregel starch">
+                    <div class="product-image"><img src="pregel_starch.png" alt="Pregel Starch"></div>
+                    <div class="product-info">
+                        <h3>Pregel Starch</h3>
+
+                        <p>Ready-to-use starch that thickens in cold water, ideal for instant formulations.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="openWhatsApp('Pregel Starch')">Get Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="food" data-name="high maltose corn syrup">
+                    <div class="product-image"><img src="high_maltose_syrup.png" alt="High Maltose Corn Syrup"></div>
                     <div class="product-info">
                         <h3>High Maltose Corn Syrup</h3>
-                        <div class="particle-preview-container">
-                            <div class="particle-preview liquid" data-type="liquid"></div>
-                            <span>MALTOSE ENRICHED SYRUP</span>
-                        </div>
-                        <p class="spec">300kg Drums</p>
-                        <p>Premium syrup ideal for hard candy, brewing, and bakery products.</p>
+
+                        <p>Premium syrup ideal for hard candy, brewing, and bakery products with superior clarity.</p>
                         <button class="btn-primary" style="width:100%;justify-content:center;"
-                            onclick="openWhatsApp('High Maltose Corn Syrup')">Get
-                            Quote</button>
+                            onclick="openWhatsApp('High Maltose Corn Syrup')">Get Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="food" data-name="skimmed milk powder">
+                    <div class="product-image"><img src="skimmed_milk.png" alt="Skimmed Milk Powder"></div>
+                    <div class="product-info">
+                        <h3>Skimmed Milk Powder</h3>
+
+                        <p>Premium spray-dried milk powder for bakery, dairy, and confectionery industries.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="openWhatsApp('Skimmed Milk Powder')">Get Quote</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="food" data-name="cocoa powder">
+                    <div class="product-image"><img src="cocoa_powder.png" alt="Cocoa Powder"></div>
+                    <div class="product-info">
+                        <h3>Cocoa Powder</h3>
+
+                        <p>Rich, premium cocoa powder for chocolate and flavoring applications.</p>
+                        <button class="btn-primary" style="width:100%;justify-content:center;"
+                            onclick="openWhatsApp('Cocoa Powder')">Get Quote</button>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -3498,8 +3448,8 @@
                             <div class="toggle-btn"><i data-lucide="chevron-down" size="20"></i></div>
                         </div>
                         <div class="accordion-content">
-                            <div class="content-inner">Yes, we are FSSAI certified, MSME registered, HALAL certified,
-                                and adhere to strict ISO 9001:2015 quality standards.</div>
+                            <div class="content-inner">Yes, we are FSSAI certified, MSME registered, Premium Quality
+                                assured, and adhere to strict ISO 9001:2015 quality standards.</div>
                         </div>
                     </div>
                 </div>
@@ -3512,8 +3462,8 @@
         <div class="container">
             <h2>Ready to Experience <span class="highlight">Premium Quality?</span></h2>
             <p>Get the best quality maize starch delivered right to your doorstep</p>
-            <button class="btn-primary" style="margin: 0 auto; display: inline-flex;"
-                onclick="openWhatsApp()">Get a Quote
+            <button class="btn-primary" style="margin: 0 auto; display: inline-flex;" onclick="openWhatsApp()">Get a
+                Quote
                 Now</button>
         </div>
     </section>
@@ -3567,18 +3517,16 @@
                         <span class="cert-label">CERTIFIED & COMPLIANT</span>
                         <div class="cert-logos">
                             <div class="cert-logo">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/FSSAI_logo.svg/300px-FSSAI_logo.svg.png"
-                                    alt="FSSAI" class="cert-logo-img">
-                                <span>Certified</span>
+                                <span style="font-size: 18px; font-weight: 900; color: #e65100;">FSSAI</span>
+                                <span style="margin-top: -5px;">Certified</span>
                             </div>
                             <div class="cert-logo">
                                 <span style="font-size: 18px; font-weight: 900; color: #1565c0;">MSME</span>
                                 <span style="margin-top: -5px;">Registered</span>
                             </div>
                             <div class="cert-logo">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Halal_logo.svg/300px-Halal_logo.svg.png"
-                                    alt="HALAL" class="cert-logo-img">
-                                <span>Certified</span>
+                                <span style="font-size: 18px; font-weight: 900; color: #f57c00;">PREMIUM</span>
+                                <span style="margin-top: -5px;">Quality</span>
                             </div>
                             <div class="cert-logo">
                                 <span style="font-size: 18px; font-weight: 900; color: #333;">ISO</span>
@@ -3654,19 +3602,19 @@
                                 <i data-lucide="package" size="18"></i>
                                 <select id="product" name="product">
                                     <option value="">Select a product...</option>
-                                    <option>Food Grade Maize Starch</option>
-                                    <option>Industrial Maize Starch</option>
-                                    <option>Modified Maize Starch</option>
-                                    <option>Premium Bleached Starch</option>
-                                    <option>Cross-Linked Starch</option>
-                                    <option>Custom Formulations</option>
-                                    <option>Maltodextrine</option>
+                                    <option>Maize Starch Powder</option>
+                                    <option>Maltodextrin</option>
+                                    <option>Liquid Glucose</option>
+                                    <option>Dextrose Monohydrate</option>
+                                    <option>Thin Boiling Starch Fabrilose - SPL</option>
+                                    <option>Dextrose Anhydrous</option>
+                                    <option>Glucose D</option>
+                                    <option>Sorbitol</option>
+                                    <option>Orange Flavoured Glucose</option>
+                                    <option>Pregel Starch</option>
+                                    <option>High Maltose Corn Syrup</option>
                                     <option>Skimmed Milk Powder</option>
                                     <option>Cocoa Powder</option>
-                                    <option>Glucose D</option>
-                                    <option>Liquid Glucose</option>
-                                    <option>Sorbitol</option>
-                                    <option>High Maltose Corn Syrup</option>
                                 </select>
                             </div>
                         </div>
@@ -3746,7 +3694,7 @@
                     <h4>Certifications</h4>
                     <p>✓ FSSAI Certified</p>
                     <p>✓ MSME Registered</p>
-                    <p>✓ HALAL Certified</p>
+                    <p>✓ Premium Quality</p>
                     <p>✓ ISO Standards</p>
                 </div>
             </div>
@@ -3814,35 +3762,7 @@
         const revealObserver = new IntersectionObserver(revealCallback, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ===== PRODUCT FILTERING =====
-        const productGrid = document.getElementById('productGrid');
-        const productSearch = document.getElementById('productSearch');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const productCards = document.querySelectorAll('#productGrid .product-card');
 
-        function filterProducts() {
-            const searchTerm = productSearch.value.toLowerCase();
-            const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
-            productCards.forEach(card => {
-                const name = card.dataset.name.toLowerCase();
-                const category = card.dataset.category;
-                const matchesSearch = name.includes(searchTerm);
-                const matchesCategory = activeCategory === 'all' || category === activeCategory;
-                card.classList.toggle('hidden', !(matchesSearch && matchesCategory));
-                if (matchesSearch && matchesCategory) {
-                    card.classList.add('active');
-                }
-            });
-        }
-
-        productSearch.addEventListener('input', filterProducts);
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                filterProducts();
-            });
-        });
 
         // ===== FAQ ACCORDION =====
         document.querySelectorAll('.accordion-item').forEach(item => {
