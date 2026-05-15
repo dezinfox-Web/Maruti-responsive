@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maruthi Enterprises - India's Trusted Maize Starch Supplier</title>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+    <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
     <style>
         * {
             margin: 0;
@@ -1036,69 +1038,7 @@
             gap: 32px;
         }
 
-        /* ===== TESTIMONIALS MARQUEE ===== */
-        .testimonials-section {
-            background-color: var(--white);
-            padding: 100px 0;
-            overflow: hidden;
-            position: relative;
-        }
 
-        .marquee-wrapper {
-            margin-top: 48px;
-            display: flex;
-            overflow: hidden;
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        }
-
-        .marquee-container {
-            display: flex;
-            gap: 24px;
-            width: max-content;
-            animation: marquee 40s linear infinite;
-            padding: 20px 0;
-        }
-
-        .testimonials-section:hover .marquee-container {
-            animation-play-state: paused;
-        }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(calc(-50% - 12px));
-            }
-        }
-
-        .testimonial-card {
-            background-color: #F8F9F8;
-            padding: 32px;
-            border-radius: 20px;
-            width: 400px;
-            max-width: 100%;
-            flex-shrink: 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-            border: 1px solid rgba(46, 125, 50, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            background-color: white;
-            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.08);
-            border-color: var(--primary-green);
-        }
-
-        .testimonial-card p {
-            font-size: 15px;
-            color: var(--dark-text);
-            margin-bottom: 24px;
-            line-height: 1.8;
-            font-style: italic;
-        }
 
         /* ===== REVEAL ON SCROLL ===== */
         .reveal {
@@ -1139,37 +1079,6 @@
             width: 60%;
         }
 
-        .testimonial-author {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .testimonial-avatar {
-            width: 44px;
-            height: 44px;
-            background-color: var(--primary-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-        }
-
-        .testimonial-info h4 {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--dark-text);
-            margin: 0;
-        }
-
-        .testimonial-info p {
-            font-size: 13px;
-            color: var(--secondary-text);
-            margin: 4px 0 0 0;
-            font-style: normal;
-        }
 
         /* ===== FINAL CTA ===== */
         .final-cta {
@@ -2312,23 +2221,6 @@
                 background: #111;
             }
 
-            /* Testimonials: swipe scroll */
-            .marquee-wrapper {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                mask-image: none;
-                cursor: grab;
-                padding-bottom: 8px;
-            }
-
-            .marquee-container {
-                animation: none;
-                padding: 8px 0;
-            }
-
-            .testimonial-card {
-                width: 100%;
-            }
 
             /* Contact section */
             .contact-section {
@@ -2518,8 +2410,7 @@
             /* Sections padding */
             .trust-section,
             .product-preview,
-            .detailed-products,
-            .testimonials-section {
+            .detailed-products {
                 padding: 48px 0;
             }
 
@@ -2608,7 +2499,484 @@
             font-weight: 700;
             color: var(--secondary-text);
         }
+
+        /* ==========================================================
+           PREMIUM TESTIMONIALS SECTION (ADVANCED CAROUSEL)
+           ========================================================== */
+        /* ==========================================================
+           GOOGLE TRUSTED TESTIMONIALS SECTION
+           ========================================================== */
+        .premium-testimonials {
+            background: radial-gradient(circle at 50% 50%, #f8fafc 0%, #f1f5f9 100%);
+            padding: 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .texture-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Ambient Emerald Glows */
+        .ambient-glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(60px);
+        }
+
+        .glow-1 {
+            top: -200px;
+            right: -200px;
+        }
+
+        .glow-2 {
+            bottom: -200px;
+            left: -200px;
+        }
+
+        .premium-testimonials .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Google Trust Banner */
+        .google-trust-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            padding: 24px 40px;
+            border-radius: 24px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .google-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-right: 1px solid #e2e8f0;
+            padding-right: 40px;
+        }
+
+        .google-brand svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .google-brand span {
+            font-size: 18px;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: -0.02em;
+        }
+
+        .rating-summary {
+            text-align: center;
+        }
+
+        .rating-summary .stars {
+            color: #fbbf24;
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+
+        .rating-summary p {
+            font-size: 15px;
+            font-weight: 600;
+            color: #0f172a;
+            margin: 0;
+        }
+
+        .google-verified-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(34, 197, 94, 0.05);
+            padding: 8px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(34, 197, 94, 0.1);
+            color: #166534;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-card .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #0f172a;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .stat-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Embla Carousel Structure */
+        .embla-testimonials {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .embla__viewport {
+            overflow: hidden;
+            width: 100%;
+            cursor: grab;
+            padding: 40px 0;
+        }
+
+        .embla__container {
+            display: flex;
+            margin-left: -30px;
+        }
+
+        .embla__slide {
+            flex: 0 0 520px;
+            padding-left: 30px;
+            transition: opacity 0.5s ease, filter 0.5s ease;
+        }
+
+        .embla__slide:not(.is-selected) {
+            opacity: 0.4;
+            filter: blur(4px) grayscale(0.2);
+            transform: scale(0.9);
+        }
+
+        /* Testimonial Card Styling */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            padding: 45px;
+            border-radius: 28px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 100%;
+        }
+
+        .glass-card:hover {
+            box-shadow: 0 30px 60px rgba(34, 197, 94, 0.1);
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            font-size: 110px;
+            font-family: serif;
+            color: rgba(34, 197, 94, 0.05);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .google-review-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 100px;
+        }
+
+        .google-review-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .rating {
+            display: flex;
+            gap: 3px;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .rating.animated i {
+            animation: starPulse 2s infinite;
+        }
+
+        @keyframes starPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #1e293b;
+            font-weight: 500;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .client-profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: auto;
+        }
+
+        .client-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .client-info h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .verified-check {
+            color: #22c55e;
+            display: inline-flex;
+        }
+
+        .review-meta {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* Carousel Controls */
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .embla__prev,
+        .embla__next {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .embla__prev:hover,
+        .embla__next:hover {
+            border-color: #22c55e;
+            color: #22c55e;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.15);
+        }
+
+        .embla__dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .embla__dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .embla__dot--selected {
+            background: #22c55e;
+            width: 30px;
+            border-radius: 10px;
+        }
+
+        /* Progress Bar */
+        .carousel-progress {
+            width: 250px;
+            height: 4px;
+            background: #e2e8f0;
+            margin: 40px auto 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .carousel-progress__bar {
+            height: 100%;
+            background: #22c55e;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* Bottom Trust Indicators */
+        .bottom-trust-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 80px;
+            padding-top: 50px;
+            border-top: 1px solid #e2e8f0;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #475569;
+        }
+
+        .trust-badge i {
+            color: #22c55e;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Responsive Updates */
+        @media (max-width: 991px) {
+            .google-trust-banner {
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px;
+            }
+
+            .google-brand {
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px solid #e2e8f0;
+                padding-bottom: 20px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .embla__slide {
+                flex: 0 0 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .premium-testimonials {
+                padding: 100px 0;
+            }
+
+            .premium-testimonials .section-header h2 {
+                font-size: 36px;
+            }
+
+            .stats-row {
+                display: none;
+            }
+
+            .embla__slide {
+                flex: 0 0 90%;
+            }
+
+            .glass-card {
+                padding: 30px;
+            }
+
+            .testimonial-text {
+                font-size: 16px;
+            }
+
+            .bottom-trust-indicators {
+                gap: 20px;
+            }
+        }
     </style>
+
 </head>
 
 <body>
@@ -3282,109 +3650,495 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="testimonials-section reveal" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Client <span class="highlight">Testimonials</span></h2>
-                <p>What our satisfied clients say about us</p>
-            </div>
-        </div>
 
-        <div class="marquee-wrapper" id="marqueeWrapper">
-            <div class="marquee-container" id="marqueeContainer">
-                <div class="testimonial-card">
-                    <p>"Maruthi Enterprises provides consistent quality and excellent service. They've been our trusted
-                        partner for 8+ years."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">AK</div>
-                        <div class="testimonial-info">
-                            <h4>Arjun Kumar</h4>
-                            <p>Nutrition Foods Pvt. Ltd</p>
+    <!-- PREMIUM GOOGLE TRUSTED TESTIMONIALS SECTION -->
+    <section class="premium-testimonials reveal" id="testimonials">
+        <div class="texture-overlay"></div>
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
+
+        <div class="container">
+            <!-- Google Trust Banner -->
+            <div class="google-trust-banner reveal">
+                <div class="google-brand">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"
+                            fill="#EA4335" />
+                    </svg>
+                    <span>Google Trusted Brand</span>
+                </div>
+                <div class="rating-summary">
+                    <div class="stars">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p>Rated 4.9/5 by verified customers</p>
+                </div>
+                <div class="google-verified-badge">
+                    <i data-lucide="shield-check" size="18"></i>
+                    <span>100% Genuine Feedback</span>
+                </div>
+            </div>
+
+            <!-- Section Header -->
+            <div class="section-header reveal" style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 48px; font-weight: 800; color: #0f172a;">What Our <span>Clients Say</span></h2>
+                <p style="font-size: 18px; color: #64748b; max-width: 700px; margin: 20px auto 0;">Real feedback from
+                    manufacturing leaders and industrial partners who trust Maruthi Enterprises for premium quality
+                    starch products.</p>
+            </div>
+
+            <!-- Animated Statistics Row -->
+            <div class="stats-row reveal">
+                <div class="stat-card">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="98">0</span>
+                    <span class="stat-label">Satisfaction (%)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="4.9">0</span>
+                    <span class="stat-label">Google Rating</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Trusted In India</span>
+                </div>
+            </div>
+
+            <!-- Testimonial Carousel -->
+            <div class="embla-testimonials reveal">
+                <div class="embla__viewport">
+                    <div class="embla__container">
+                        <!-- Review Card 1 -->
+                        <div class="embla__slide">
+                            <div class="glass-card">
+                                <div class="quote-icon">“</div>
+                                <div class="card-header">
+                                    <div class="rating animated">
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                    </div>
+                                    <div class="google-review-badge">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                                fill="#4285F4" />
+                                            <path
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                                fill="#34A853" />
+                                            <path
+                                                d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"
+                                                fill="#FBBC05" />
+                                            <path
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"
+                                                fill="#EA4335" />
+                                        </svg>
+                                        Verified
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">“Best quality of Maize Starch Powder, Dextrose Anhydrous,
+                                    Maltodextrin, Dextrose Monohydrate, High Maltose Corn Syrup, Dried Glucose Syrup,
+                                    Pregel Starch, Dextrin (Yellow & White), Glucose-D, Liquid Glucose, and Sorbitol.”
+                                </p>
+                                <div class="client-profile">
+                                    <div class="client-avatar">
+                                        <div
+                                            style="width:100%;height:100%;background:#4285f4;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;">
+                                            MA</div>
+                                    </div>
+                                    <div class="client-info">
+                                        <h4>Manickam Al <span class="verified-check"><i data-lucide="check-circle-2"
+                                                    size="14"></i></span></h4>
+                                        <p class="review-meta">1 Review • 3 Years Ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Card 2 -->
+                        <div class="embla__slide">
+                            <div class="glass-card">
+                                <div class="quote-icon">“</div>
+                                <div class="card-header">
+                                    <div class="rating animated">
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                    </div>
+                                    <div class="google-review-badge">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                                fill="#4285F4" />
+                                            <path
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                                fill="#34A853" />
+                                            <path
+                                                d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"
+                                                fill="#FBBC05" />
+                                            <path
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"
+                                                fill="#EA4335" />
+                                        </svg>
+                                        Verified
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">“Product availability and service are good.”</p>
+                                <div class="client-profile">
+                                    <div class="client-avatar">
+                                        <div
+                                            style="width:100%;height:100%;background:#34a853;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;">
+                                            MA</div>
+                                    </div>
+                                    <div class="client-info">
+                                        <h4>Musheer Ansari <span class="verified-check"><i data-lucide="check-circle-2"
+                                                    size="14"></i></span></h4>
+                                        <p class="review-meta">Local Guide • 12 Reviews • 1 Year Ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Card 3 -->
+                        <div class="embla__slide">
+                            <div class="glass-card">
+                                <div class="quote-icon">“</div>
+                                <div class="card-header">
+                                    <div class="rating animated">
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                    </div>
+                                    <div class="google-review-badge">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                                fill="#4285F4" />
+                                            <path
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                                fill="#34A853" />
+                                            <path
+                                                d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"
+                                                fill="#FBBC05" />
+                                            <path
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"
+                                                fill="#EA4335" />
+                                        </svg>
+                                        Verified
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">“High and best quality maize starch products.”</p>
+                                <div class="client-profile">
+                                    <div class="client-avatar">
+                                        <div
+                                            style="width:100%;height:100%;background:#fbbc05;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;">
+                                            TN</div>
+                                    </div>
+                                    <div class="client-info">
+                                        <h4>Thanush Nandan <span class="verified-check"><i data-lucide="check-circle-2"
+                                                    size="14"></i></span></h4>
+                                        <p class="review-meta">1 Review • 3 Years Ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Card 4 -->
+                        <div class="embla__slide">
+                            <div class="glass-card">
+                                <div class="quote-icon">“</div>
+                                <div class="card-header">
+                                    <div class="rating animated">
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                    </div>
+                                    <div class="google-review-badge">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                                fill="#4285F4" />
+                                            <path
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                                fill="#34A853" />
+                                            <path
+                                                d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"
+                                                fill="#FBBC05" />
+                                            <path
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"
+                                                fill="#EA4335" />
+                                        </svg>
+                                        Verified
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">“Great customer service at the best prices.”</p>
+                                <div class="client-profile">
+                                    <div class="client-avatar">
+                                        <div
+                                            style="width:100%;height:100%;background:#ea4335;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;">
+                                            SR</div>
+                                    </div>
+                                    <div class="client-info">
+                                        <h4>Samuel Ranjith <span class="verified-check"><i data-lucide="check-circle-2"
+                                                    size="14"></i></span></h4>
+                                        <p class="review-meta">2 Reviews • 3 Years Ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Card 5 -->
+                        <div class="embla__slide">
+                            <div class="glass-card">
+                                <div class="quote-icon">“</div>
+                                <div class="card-header">
+                                    <div class="rating animated">
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                    </div>
+                                    <div class="google-review-badge">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                                fill="#4285F4" />
+                                            <path
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                                fill="#34A853" />
+                                            <path
+                                                d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"
+                                                fill="#FBBC05" />
+                                            <path
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"
+                                                fill="#EA4335" />
+                                        </svg>
+                                        Verified
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">“Best quality maize starch products.”</p>
+                                <div class="client-profile">
+                                    <div class="client-avatar">
+                                        <div
+                                            style="width:100%;height:100%;background:#673ab7;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;">
+                                            RM</div>
+                                    </div>
+                                    <div class="client-info">
+                                        <h4>Raja Manickam <span class="verified-check"><i data-lucide="check-circle-2"
+                                                    size="14"></i></span></h4>
+                                        <p class="review-meta">1 Review • 3 Years Ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Card 6 -->
+                        <div class="embla__slide">
+                            <div class="glass-card">
+                                <div class="quote-icon">“</div>
+                                <div class="card-header">
+                                    <div class="rating animated">
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                    </div>
+                                    <div class="google-review-badge">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                                fill="#4285F4" />
+                                            <path
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                                fill="#34A853" />
+                                            <path
+                                                d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"
+                                                fill="#FBBC05" />
+                                            <path
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"
+                                                fill="#EA4335" />
+                                        </svg>
+                                        Verified
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">“High quality maize starch products.”</p>
+                                <div class="client-profile">
+                                    <div class="client-avatar">
+                                        <div
+                                            style="width:100%;height:100%;background:#00bcd4;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;">
+                                            SK</div>
+                                    </div>
+                                    <div class="client-info">
+                                        <h4>Siva Krish <span class="verified-check"><i data-lucide="check-circle-2"
+                                                    size="14"></i></span></h4>
+                                        <p class="review-meta">4 Reviews • 3 Years Ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Card 7 -->
+                        <div class="embla__slide">
+                            <div class="glass-card">
+                                <div class="quote-icon">“</div>
+                                <div class="card-header">
+                                    <div class="rating animated">
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                    </div>
+                                    <div class="google-review-badge">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                                fill="#4285F4" />
+                                            <path
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                                fill="#34A853" />
+                                            <path
+                                                d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"
+                                                fill="#FBBC05" />
+                                            <path
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"
+                                                fill="#EA4335" />
+                                        </svg>
+                                        Verified
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">“Good quality products and service.”</p>
+                                <div class="client-profile">
+                                    <div class="client-avatar">
+                                        <div
+                                            style="width:100%;height:100%;background:#ff9800;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;">
+                                            AK</div>
+                                    </div>
+                                    <div class="client-info">
+                                        <h4>Arvinth Kumar <span class="verified-check"><i data-lucide="check-circle-2"
+                                                    size="14"></i></span></h4>
+                                        <p class="review-meta">Local Guide • 14 Reviews • 3 Years Ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Card 8 -->
+                        <div class="embla__slide">
+                            <div class="glass-card">
+                                <div class="quote-icon">“</div>
+                                <div class="card-header">
+                                    <div class="rating animated">
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                        <i data-lucide="star" fill="currentColor"></i>
+                                    </div>
+                                    <div class="google-review-badge">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                                fill="#4285F4" />
+                                            <path
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                                fill="#34A853" />
+                                            <path
+                                                d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"
+                                                fill="#FBBC05" />
+                                            <path
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"
+                                                fill="#EA4335" />
+                                        </svg>
+                                        Verified
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">“Customer service and products are good.”</p>
+                                <div class="client-profile">
+                                    <div class="client-avatar">
+                                        <div
+                                            style="width:100%;height:100%;background:#9c27b0;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;">
+                                            DA</div>
+                                    </div>
+                                    <div class="client-info">
+                                        <h4>Deepak Raj Avinashilingam <span class="verified-check"><i
+                                                    data-lucide="check-circle-2" size="14"></i></span></h4>
+                                        <p class="review-meta">1 Review • 3 Years Ago</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <p>"Outstanding delivery reliability and product quality. We've never had to look elsewhere for our
-                        starch requirements."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">RN</div>
-                        <div class="testimonial-info">
-                            <h4>Rajesh Nair</h4>
-                            <p>Textile Innovation Corp</p>
-                        </div>
-                    </div>
+
+                <!-- Carousel Controls -->
+                <div class="carousel-controls">
+                    <button class="embla__prev" aria-label="Previous slide">
+                        <i data-lucide="arrow-left"></i>
+                    </button>
+
+                    <div class="embla__dots"></div>
+
+                    <button class="embla__next" aria-label="Next slide">
+                        <i data-lucide="arrow-right"></i>
+                    </button>
                 </div>
-                <div class="testimonial-card">
-                    <p>"Best supplier in the industry. Their competitive pricing and technical support make them
-                        invaluable to our operations."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">SG</div>
-                        <div class="testimonial-info">
-                            <h4>Sneha Gupta</h4>
-                            <p>Premium Food Solutions</p>
-                        </div>
-                    </div>
+
+                <!-- Progress Bar -->
+                <div class="carousel-progress">
+                    <div class="carousel-progress__bar"></div>
                 </div>
-                <div class="testimonial-card">
-                    <p>"Highly professional team with deep industry knowledge. Their food-grade starch is consistently
-                        top-tier."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">MP</div>
-                        <div class="testimonial-info">
-                            <h4>Manoj Pandey</h4>
-                            <p>Quality Bakers India</p>
-                        </div>
-                    </div>
+            </div>
+
+            <!-- Bottom Trust Indicators -->
+            <div class="bottom-trust-indicators reveal">
+                <div class="trust-badge">
+                    <i data-lucide="check-circle-2"></i>
+                    Verified Google Reviews
                 </div>
-                <!-- Duplicate set for seamless loop -->
-                <div class="testimonial-card">
-                    <p>"Maruthi Enterprises provides consistent quality and excellent service. They've been our trusted
-                        partner for 8+ years."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">AK</div>
-                        <div class="testimonial-info">
-                            <h4>Arjun Kumar</h4>
-                            <p>Nutrition Foods Pvt. Ltd</p>
-                        </div>
-                    </div>
+                <div class="trust-badge">
+                    <i data-lucide="map-pin"></i>
+                    Trusted Across India
                 </div>
-                <div class="testimonial-card">
-                    <p>"Outstanding delivery reliability and product quality. We've never had to look elsewhere for our
-                        starch requirements."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">RN</div>
-                        <div class="testimonial-info">
-                            <h4>Rajesh Nair</h4>
-                            <p>Textile Innovation Corp</p>
-                        </div>
-                    </div>
+                <div class="trust-badge">
+                    <i data-lucide="shield-check"></i>
+                    Premium Quality Products
                 </div>
-                <div class="testimonial-card">
-                    <p>"Best supplier in the industry. Their competitive pricing and technical support make them
-                        invaluable to our operations."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">SG</div>
-                        <div class="testimonial-info">
-                            <h4>Sneha Gupta</h4>
-                            <p>Premium Food Solutions</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Highly professional team with deep industry knowledge. Their food-grade starch is consistently
-                        top-tier."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">MP</div>
-                        <div class="testimonial-info">
-                            <h4>Manoj Pandey</h4>
-                            <p>Quality Bakers India</p>
-                        </div>
-                    </div>
+                <div class="trust-badge">
+                    <i data-lucide="headphones"></i>
+                    Fast Customer Support
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- FAQ SECTION -->
     <section class="faq-section reveal" id="faq">
@@ -3806,22 +4560,37 @@
             setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
         }
 
-        // ===== TESTIMONIALS: DISABLE MARQUEE ON MOBILE + TOUCH SWIPE =====
-        function handleTestimonialsResponsive() {
-            const wrapper = document.getElementById('marqueeWrapper');
-            const container = document.getElementById('marqueeContainer');
-            if (window.innerWidth < 768) {
-                container.style.animation = 'none';
-                wrapper.style.overflowX = 'auto';
-                wrapper.style.webkitOverflowScrolling = 'touch';
-            } else {
-                container.style.animation = '';
-                wrapper.style.overflowX = 'hidden';
-            }
-        }
 
-        handleTestimonialsResponsive();
-        window.addEventListener('resize', handleTestimonialsResponsive);
+        // ===== COUNTER ANIMATION =====
+        const animateCounters = () => {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseFloat(stat.getAttribute('data-target'));
+                const count = parseFloat(stat.innerText);
+                const increment = target / 50;
+
+                if (count < target) {
+                    const newValue = count + increment;
+                    stat.innerText = target % 1 === 0 ? Math.ceil(newValue) : newValue.toFixed(1);
+                    setTimeout(animateCounters, 30);
+                } else {
+                    stat.innerText = target + (stat.getAttribute('data-target') === '500' ? '+' : (stat.getAttribute('data-target') === '98' ? '%' : ''));
+                }
+            });
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsRow = document.querySelector('.stats-row');
+        if (statsRow) statsObserver.observe(statsRow);
+
 
         // ===== PARTICLE GENERATION =====
         function generateParticles() {
@@ -3857,6 +4626,7 @@
         }
 
         // ===== INITIAL REVEAL =====
+
         document.addEventListener('DOMContentLoaded', () => {
             generateParticles();
             document.querySelectorAll('.reveal').forEach(el => {
@@ -3864,8 +4634,99 @@
                     el.classList.add('active');
                 }
             });
+
+            // Re-initialize Lucide for new elements
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+
+            // ===== PREMIUM TESTIMONIAL CAROUSEL =====
+            const emblaNode = document.querySelector('.embla-testimonials .embla__viewport');
+            const prevBtn = document.querySelector('.embla__prev');
+            const nextBtn = document.querySelector('.embla__next');
+            const dotsNode = document.querySelector('.embla__dots');
+            const progressBar = document.querySelector('.carousel-progress__bar');
+
+            if (emblaNode) {
+                const autoplayOptions = {
+                    delay: 4500,
+                    stopOnInteraction: false,
+                    stopOnMouseEnter: true,
+                    playOnInit: true
+                };
+
+                const embla = EmblaCarousel(emblaNode, {
+                    loop: true,
+                    align: 'center',
+                    dragFree: false, // Changed to false for cleaner snapping
+                    skipSnaps: false,
+                    containScroll: 'trimSnaps'
+                }, [EmblaCarouselAutoplay(autoplayOptions)]);
+
+                // Dot navigation
+                const setupDots = () => {
+                    const scrollSnaps = embla.scrollSnapList();
+                    dotsNode.innerHTML = scrollSnaps.map(() => '<button class="embla__dot" type="button"></button>').join('');
+                    const dots = Array.from(dotsNode.querySelectorAll('.embla__dot'));
+
+                    dots.forEach((dot, index) => {
+                        dot.addEventListener('click', () => embla.scrollTo(index), false);
+                    });
+
+                    const setSelectedDot = () => {
+                        const previous = embla.previousScrollSnap();
+                        const selected = embla.selectedScrollSnap();
+                        if (dots[previous]) dots[previous].classList.remove('embla__dot--selected');
+                        if (dots[selected]) dots[selected].classList.add('embla__dot--selected');
+                    };
+
+                    embla.on('select', setSelectedDot);
+                    embla.on('init', setSelectedDot);
+                };
+
+                // Progress bar
+                const updateProgressBar = () => {
+                    const progress = Math.max(0, Math.min(1, embla.scrollProgress()));
+                    progressBar.style.width = `${progress * 100}%`;
+                };
+
+                // Selection Highlight
+                const updateSelectionClasses = () => {
+                    const selectedIndex = embla.selectedScrollSnap();
+                    const slides = embla.slideNodes();
+                    slides.forEach((slide, index) => {
+                        if (index === selectedIndex) {
+                            slide.classList.add('is-selected');
+                        } else {
+                            slide.classList.remove('is-selected');
+                        }
+                    });
+                };
+
+                // Event Listeners
+                prevBtn.addEventListener('click', () => embla.scrollPrev(), false);
+                nextBtn.addEventListener('click', () => embla.scrollNext(), false);
+
+                embla.on('scroll', updateProgressBar);
+                embla.on('select', updateSelectionClasses);
+                embla.on('init', updateSelectionClasses);
+
+                setupDots();
+                updateProgressBar();
+
+                // Autoplay Resume Logic
+                let autoplayTimer = null;
+                embla.on('pointerDown', () => {
+                    embla.plugins().autoplay.stop();
+                    clearTimeout(autoplayTimer);
+                });
+                embla.on('pointerUp', () => {
+                    autoplayTimer = setTimeout(() => {
+                        embla.plugins().autoplay.play();
+                    }, 4000);
+                });
+            }
         });
     </script>
+
 </body>
 
 </html>
