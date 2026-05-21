@@ -1333,10 +1333,25 @@
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-decoration: none;
+            overflow: hidden;
+            padding: 6px;
         }
 
         .social-icon:hover {
             background-color: var(--accent-orange);
+            transform: translateY(-3px);
+        }
+
+        .social-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover img {
+            transform: scale(1.1);
         }
 
         .footer-bottom {
@@ -2201,9 +2216,9 @@
                     <p>📞 +91 9876543210</p>
                     <p>📧 info@maruthi-enterprises.com</p>
                     <div class="social-icons">
-                        <div class="social-icon">f</div>
-                        <div class="social-icon">in</div>
-                        <div class="social-icon">tw</div>
+                        <a href="https://www.linkedin.com/company/maruthisenterprises/?originalSubdomain=in" class="social-icon" target="_blank" rel="noopener"><img src="assets/linkedin_logo.png" alt="LinkedIn"></a>
+                        <a href="https://www.instagram.com/maruthisenterprises/" class="social-icon" target="_blank" rel="noopener"><img src="assets/instagram_logo.png" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fshare.google%2FSqyzMTbBu6I08H6Dy" class="social-icon" target="_blank" rel="noopener"><img src="assets/facebook_logo.png" alt="Facebook"></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -2302,6 +2317,9 @@
                 }
             });
         });
+    </script>
+    <script>
+        lucide.createIcons();
     </script>
 
 </body>
