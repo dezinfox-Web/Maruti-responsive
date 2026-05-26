@@ -1466,7 +1466,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-badge">
-                        <span>🍃</span> 23+ Years of Trust & Quality
+                        <span>🍃</span> 25+ Years of Trust & Quality
                     </div>
                     <h1>India's Trusted <br><span class="highlight">Maize Starch</span> Supplier</h1>
                     <p class="subtext">Delivering premium-quality starch products with consistency, purity, and
@@ -1539,7 +1539,7 @@
                 <div class="trust-stat">
                     <div class="stat-icon">⏳</div>
                     <div class="stat-info">
-                        <h4>23+</h4>
+                        <h4>25+</h4>
                         <p>Years Exp.</p>
                     </div>
                 </div>
@@ -1563,18 +1563,12 @@
 
             <div class="hero-trust-bar"
                 style="max-width: 900px; margin: 0 auto 48px; background: rgba(255, 255, 255, 0.5);">
-                <div class="trust-stat">
-                    <div class="stat-icon" style="background: rgba(46, 125, 50, 0.1);">🌿</div>
-                    <div class="stat-info">
-                        <h4>Premium Quality</h4>
-                        <p>Consistent purity & performance</p>
-                    </div>
-                </div>
+
                 <div class="trust-stat">
                     <div class="stat-icon" style="background: rgba(46, 125, 50, 0.1);">🛡️</div>
                     <div class="stat-info">
                         <h4>Trusted Partner</h4>
-                        <p>23+ years of industry expertise</p>
+                        <p>25+ years of industry expertise</p>
                     </div>
                 </div>
                 <div class="trust-stat">
@@ -1601,7 +1595,7 @@
                             50 kg & 25 kg Bags</p>
                         <p
                             style="font-size: 13px; line-height: 1.5; margin-bottom: 12px; height: 3.2em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
-                            Premium quality starch for food manufacturing, with superior whiteness and consistency</p>
+                            High-grade starch for food manufacturing, with superior whiteness and consistency</p>
 
                         <div style="display: flex; gap: 6px; margin-bottom: 15px; flex-wrap: wrap;">
                             <span
@@ -1752,7 +1746,7 @@
                     </div>
                     <div class="usp-content">
                         <h3>Industry Expertise</h3>
-                        <p>23+ years of experience in providing specialized starch solutions to various industries.</p>
+                        <p>25+ years of experience in providing specialized starch solutions to various industries.</p>
                     </div>
                 </div>
                 <div class="usp-card">
@@ -1982,7 +1976,7 @@
     <!-- FINAL CTA -->
     <section class="final-cta">
         <div class="container">
-            <h2>Ready to Experience Premium Quality?</h2>
+            <h2>Ready to Experience Our Starch Solutions?</h2>
             <p>Get the best quality maize starch delivered right to your doorstep</p>
             <button class="btn-primary"
                 onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote
@@ -2011,7 +2005,7 @@
                             </div>
                             <div class="usp-text">
                                 <h4>Trusted Quality</h4>
-                                <p>23+ Years of Excellence</p>
+                                <p>25+ Years of Excellence</p>
                             </div>
                         </div>
                         <div class="contact-usp-item">
@@ -2059,10 +2053,6 @@
                                     alt="HALAL" class="cert-logo-img">
                                 <span>Certified</span>
                             </div>
-                            <div class="cert-logo">
-                                <span style="font-size: 18px; font-weight: 900; color: #333;">ISO</span>
-                                <span style="margin-top: -5px;">9001:2015</span>
-                            </div>
                         </div>
                     </div>
 
@@ -2070,7 +2060,7 @@
                         <div class="stat-item">
                             <i data-lucide="award" size="20"></i>
                             <div class="stat-content">
-                                <h4>23+</h4>
+                                <h4>25+</h4>
                                 <p>Years Exp.</p>
                             </div>
                         </div>
@@ -2200,7 +2190,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>About Us</h4>
-                    <p>Maruthi Enterprises is India's leading maize starch manufacturer, serving industries for over 23
+                    <p>Maruthi Enterprises is India's leading maize starch manufacturer, serving industries for over 25
                         years with consistent quality and reliability.</p>
                 </div>
                 <div class="footer-section">
@@ -2226,7 +2216,6 @@
                     <p>✓ FSSAI Certified</p>
                     <p>✓ MSME Registered</p>
                     <p>✓ HALAL Certified</p>
-                    <p>✓ ISO Standards</p>
                 </div>
             </div>
 
